@@ -3,9 +3,9 @@
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
    <modelVersion>4.0.0</modelVersion>
-   <groupId>kr.board</groupId>
-   <artifactId>controller</artifactId>
-   <name>SpringMVC01</name>
+   <groupId>kr.puri</groupId>
+   <artifactId>puri</artifactId>
+   <name>puri2</name>
    <packaging>war</packaging>
    <version>1.0.0-BUILD-SNAPSHOT</version>
    <properties>
@@ -154,7 +154,18 @@
      <artifactId>jackson-databind</artifactId>
      <version>2.9.2</version>
 	</dependency>
+	
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+			<scope>provided</scope>
+		</dependency>
+		
+	
 
+
+		
    </dependencies>
    <build>
       <plugins>

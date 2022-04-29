@@ -1,15 +1,30 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <script src="${path}/resources/js/test.js"></script>
-<link href="${path}/resources/css/fontawesome-all.min.css" rel="stylesheet"/> 	
+
 <link href="${path}/resources/css/main.css" rel="stylesheet"/> 	
 <html>
 <meta charset="EUC-KR">
 
 <head>
+
 	<title>Puri</title>
+	<style type="text/css">
+	
+@font-face {
+    font-family: 'OTWelcomeRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: OTWelcomeRA, sans-serif}
+}
+</style>
 </head>
+
 <body class="homepage is-preload">
 		<div id="page-wrapper">
 
@@ -30,10 +45,10 @@
 						<header class="top-bar" >
 							<nav id="nav" >
 								<ul>
-									<li><a href="#">DDDD</a></li>
-									<li><a href="SignUp">Left Sidebar</a></li>
-									<li><a href="#">Left Sidebar</a></li>
-									<li><a href="#">Left Sidebar</a></li>
+									<li><a href="#">반려식물추천</a></li>
+									<li><a href="SignUp">병해충판독</a></li>
+									<li><a href="#">커뮤니티</a></li>
+									<li><a href="#">마이페이지</a></li>
 									<!--  <li class="break"><a href="right-sidebar.html">Right Sidebar</a></li>
 									<li><a href="no-sidebar.html">No Sidebar</a></li>-->
 								</ul>
@@ -59,9 +74,7 @@
 								<header>
 									<h2>Full Name</h2>
 								</header>
-								<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel
-								sem sit dolor neque semper magna. Lorem ipsum dolor sit amet consectetur et sed
-								adipiscing elit. Curabitur vel sem sit.</p>
+								<p>안녕하세요 저는 민서입니다.</p>
 								<ul class="actions">
 									<li><a href="#" class="button">Elevate my awareness</a></li>
 								</ul>

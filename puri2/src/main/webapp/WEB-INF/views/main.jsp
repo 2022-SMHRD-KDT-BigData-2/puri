@@ -4,7 +4,7 @@
 <c:set var="path" value="${pageContext.request.contextPath}"/>
 <script src="${path}/resources/js/test.js"></script>
 
-<link href="${path}/resources/css/main.css" rel="stylesheet"/> 	
+<link href="${path}/resources/css/main2.css" rel="stylesheet"/> 	
 <html>
 <meta charset="EUC-KR">
 
@@ -46,7 +46,7 @@ body{
 							<nav id="nav" >
 								<ul>
 									<li><a href="#">반려식물추천</a></li>
-									<li><a href="SignUp">병해충판독</a></li>
+									<li><a href="#">병해충판독</a></li>
 									<li><a href="#">커뮤니티</a></li>
 									<li><a href="#">마이페이지</a></li>
 									<!--  <li class="break"><a href="right-sidebar.html">Right Sidebar</a></li>
@@ -76,7 +76,7 @@ body{
 								</header>
 								<p>안녕하세요 저는 민서입니다.</p>
 								<ul class="actions">
-									<li><a href="#" class="button">Elevate my awareness</a></li>
+									<li><a href="<c:url value='/goSignUp.do'/>" class="button">Elevate my awareness</a></li>
 								</ul>
 							</section>
 							<section class="col-6 col-12-narrower feature">

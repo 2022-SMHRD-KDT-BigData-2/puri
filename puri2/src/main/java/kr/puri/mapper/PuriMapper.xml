@@ -3,8 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.puri.mapper.PuriMapper">   
-     <select id="memberList" resultType="kr.puri.entity.Member">
-		select * from Member
-	</select>
- 
+    
+     <insert id="SignUp" parameterType="kr.puri.entity.Member">
+         insert into member values(#{id}, #{pw}, #{nick}, #{gender}, #{age})
+	</insert>
+	
+     <select id="idcheck" resultType="int">
+         select count(*) from member
+         where id = #{id}
+     </select>
 </mapper>

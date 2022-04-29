@@ -51,41 +51,43 @@
 		<div class="input-form-backgroud row">
 			<div class="input-form col-md-12 mx-auto">
 				<h4 class="mb-3" id="Singup">회원가입</h4>
-				<form class="validation-form" novalidate>
+				<form action="SignUp.do">
 					<div class="row">
 						<div class="col-md-6 mb-3">
-							<label for="name">아이디</label> <input type="text"
-								class="form-control" id="id" placeholder="" value="" required>
-							<div class="invalid-feedback">아이디을 입력해주세요.</div>
+							<label for="name">아이디</label> 
+							<input type="text" class="form-control" name="id" id="id" placeholder="" value="" required oninput="checkId()">
+							<br>
 						</div>
 						<div class="col-md-6 mb-3">
 							<label for="nickname">닉네임</label> <input type="text"
-								class="form-control" id="nick" placeholder="" value="" required>
-							<div class="invalid-feedback">닉네임을 입력해주세요.</div>
+								class="form-control" name="nick" id="nick" placeholder=""
+								value="" required>
+
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-md-12 mb-3">
 							<label for="name">비밀번호</label> <input type="password"
-								class="form-control" id="pw" placeholder=""
+								class="form-control" name="pw" id="pw" placeholder=""
 								onchange="check_pw()" required>
-							<div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-8 mb-3">
 							<label for="root">성별</label> <select
-								class="custom-select d-block w-100" id="gender">
-								<option>남자</option>
-								<option>여자</option>
+								class="custom-select d-block w-100" name="gender" id="gender">
+								<option value="men">남자</option>
+								<option value="women">여자</option>
 							</select>
 							<div class="invalid-feedback">성별 를 선택해주세요.</div>
 						</div>
 						<div class="col-md-4 mb-3">
-							<label for="code">나이</label> <input type="number"
-								class="form-control" id="code" placeholder="" required>
-							<div class="invalid-feedback">나이를 입력해주세요.</div>
+							<label for="code">나이</label> <input type="text"
+								class="form-control" name="age" id="age"
+								placeholder="나이를 입력해주세요.">
+
 						</div>
 					</div>
 					<hr class="mb-4">
@@ -139,5 +141,23 @@
         }
     }
 </script>
+<script type="text/javascript">
+    function checkId(){
+        var id = $('#id').val(); //id값이 "id"인 입력란의 값을 저장
+        $.ajax({
+            url:'/user/idCheck', //Controller에서 인식할 주소
+            type:'post', //POST 방식으로 전달
+            data:{id:id},
+            success:function(){
+                console.log("처리 성공 시 변경되는 내용");
+            },
+            error:function(){
+                alert("에러입니다");
+            }
+        });
+    };
+</script>
+	
+
 </body>
 </html>

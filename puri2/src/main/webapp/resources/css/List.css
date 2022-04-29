@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+table {
+	margin: auto;
+}
+
+a {
+	color: white;
+	text-align: center;
+}
+
+nav {
+	position: fixed;
+	text-align: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+}
+
+.center-bar {
+	margin: auto;
+	text-align: center;
+}
+
+nav {
+	background-color: black;
+	position: fixed;
+	z-index: 10;
+	padding: 1rem;
+}

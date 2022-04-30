@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.puri.entity.Member;
 import kr.puri.mapper.PuriMapper;
-
+//확인1
 @Controller
 public class loginController {
-
+	
    @Autowired
    private PuriMapper puriMapper;
    

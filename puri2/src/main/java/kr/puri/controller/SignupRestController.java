@@ -19,14 +19,8 @@ public class SignupRestController {
 	
 	
 	@PostMapping("/idcheck.do")
-	public String idcheck( Member vo) {
-		int res = puriMapper.idcheck(vo);	
-		
-		 if(res > 0) { // 중복 존재
-		       return "flase";
-		   }
-		return "res";
-	
-	
+	public void idcheck(Member vo) {
+		puriMapper.idcheck(vo);
+
 	}
 }

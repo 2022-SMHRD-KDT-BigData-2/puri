@@ -146,36 +146,7 @@
         }
     }
 </script>
-<script type="text/javascript">
-$('#idcheck').click(function () {
-   let id = $('#idcheck')
-    if ($('#id').val() != '') {
-        $.ajax({
-            type: 'post',
-            url: "${cpath}/idcheck",
-            data: {id:id},
-            dataType: 'json',
-            success: function(result) {
-               console.log(res);
-            if(result == "true"){                     
-               $('#result').html('사용 가능한 아이디 입니다');
-               $('#result').css('color', 'black');
-            } else{                  
-               $('#result').html('중복된 아이디 입니다');
-               $('#result').css('color', 'tomato');
-            }
-            },
-            error: function() {alert("error");}
-                  
-        });
-               
-    } else {
-        alert('아이디를 입력하세요.');
-        $('#id').focus();
-    }
-            
-});
-</script>
+
 
    
 

@@ -10,9 +10,10 @@ import kr.puri.entity.Member;
 public interface PuriMapper {
 	// 회원가입
 	public void SignUp(Member vo);
-	
+
 	// 아이디 중복 체크
 	public int idcheck(Member vo);
 
-	
+	public Member memberLogin(Member mvo);
+
 }

@@ -11,7 +11,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="${path}/resources/css/User.css" rel="stylesheet" />
-
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -55,7 +58,9 @@
 					<div class="row">
 						<div class="col-md-6 mb-3">
 							<label for="name">아이디</label> 
-							<input type="text" class="form-control" name="id" id="id" placeholder="" value="" required oninput="checkId()">
+							<input type="text" class="form-control" name="id" id="id" placeholder="" value="" required >
+							<input type="button" id="idcheck" class="btn btn-default" value="아이디중복검사"/>
+							<span id = "result"></span>
 							<br>
 						</div>
 						<div class="col-md-6 mb-3">
@@ -142,21 +147,36 @@
     }
 </script>
 <script type="text/javascript">
-    function checkId(){
-        var id = $('#id').val(); //id값이 "id"인 입력란의 값을 저장
+$('#idcheck').click(function () {
+	let id = $('#idcheck')
+    if ($('#id').val() != '') {
         $.ajax({
-            url:'/user/idCheck', //Controller에서 인식할 주소
-            type:'post', //POST 방식으로 전달
-            data:{id:id},
-            success:function(){
-                console.log("처리 성공 시 변경되는 내용");
+            type: 'post',
+            url: "${cpath}/idcheck",
+            data: {id:id},
+            dataType: 'json',
+            success: function(result) {
+            	console.log(res);
+				if(result == "true"){							
+					$('#result').html('사용 가능한 아이디 입니다');
+					$('#result').css('color', 'black');
+				} else{						
+					$('#result').html('중복된 아이디 입니다');
+					$('#result').css('color', 'tomato');
+				}
             },
-            error:function(){
-                alert("에러입니다");
-            }
+            error: function() {alert("error");}
+   					
         });
-    };
+   				
+    } else {
+        alert('아이디를 입력하세요.');
+        $('#id').focus();
+    }
+   			
+});
 </script>
+
 	
 
 </body>

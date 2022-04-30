@@ -17,7 +17,7 @@
 <style type="text/css">
 .container {
    min-height: 100vh;
-   background-color: rgba(0, 0, 0, .5);
+  
 }
 
 .input-form {

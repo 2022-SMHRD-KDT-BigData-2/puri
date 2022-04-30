@@ -20,25 +20,26 @@ import kr.puri.mapper.PuriMapper;
 @Controller
 
 public class SignupController {
-	@Autowired // DI(의존성 주입)
-	private PuriMapper puriMapper;
-	
-	@RequestMapping("/SignUp.do")
-	public String Signup(Member vo) {
-		puriMapper.SignUp(vo);
-		return "main";
-	}
-	
-	@GetMapping("/goSignUp.do")
-	public String goSignUp() {
-		return "Signup";
-	}
-	
-	@GetMapping("/main.do")
-	public String main() {
-		return "main";
-	}
-	
-	
-	
+   @Autowired // DI(의존성 주입)
+   private PuriMapper puriMapper;
+   
+   @RequestMapping("/SignUp.do")
+   public String Signup(Member vo) {
+      puriMapper.SignUp(vo);
+      return "main";
+   }
+   
+   @GetMapping("/goSignUp.do")
+   public String goSignUp() {
+      return "Signup";
+   }
+   
+   @GetMapping("/main.do")
+   public String main() {
+      return "main";
+   }
+   
+
+   
+   
 }

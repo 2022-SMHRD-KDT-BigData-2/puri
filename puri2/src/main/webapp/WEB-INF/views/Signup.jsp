@@ -1,7 +1,7 @@
 <%@page import="kr.puri.entity.Member"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
@@ -12,103 +12,103 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="${path}/resources/css/User.css" rel="stylesheet" />
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+   href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+   crossorigin="anonymous">
 <style type="text/css">
 .container {
-	min-height: 100vh;
-	background-color: rgba(0, 0, 0, .5);
+   min-height: 100vh;
+   background-color: rgba(0, 0, 0, .5);
 }
 
 .input-form {
-	max-width: 680px;
-	margin-top: 80px;
-	padding: 32px;
-	background: #fff;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;
-	-webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-	-moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
-	box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
+   max-width: 680px;
+   margin-top: 80px;
+   padding: 32px;
+   background: #fff;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   border-radius: 10px;
+   -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+   -moz-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15)
 }
 
 #Singup {
-	border-bottom: solid 1px #d2d7dc;
-	padding-bottom: 10px;
+   border-bottom: solid 1px #d2d7dc;
+   padding-bottom: 10px;
 }
 
 .where {
-	text-align: center;
+   text-align: center;
 }
 </style>
 </head>
 
 <body>
-	<div class="container col-md-12">
-		<div class="input-form-backgroud row">
-			<div class="input-form col-md-12 mx-auto">
-				<h4 class="mb-3" id="Singup">회원가입</h4>
-				<form action="SignUp.do">
-					<div class="row">
-						<div class="col-md-6 mb-3">
-							<label for="name">아이디</label> 
-							<input type="text" class="form-control" name="id" id="id" placeholder="" value="" required >
-							<input type="button" id="idcheck" class="btn btn-default" value="아이디중복검사"/>
-							<span id = "result"></span>
-							<br>
-						</div>
-						<div class="col-md-6 mb-3">
-							<label for="nickname">닉네임</label> <input type="text"
-								class="form-control" name="nick" id="nick" placeholder=""
-								value="" required>
+   <div class="container col-md-12">
+      <div class="input-form-backgroud row">
+         <div class="input-form col-md-12 mx-auto">
+            <h4 class="mb-3" id="Signup">회원가입</h4>
+            <form action="SignUp.do">
+               <div class="row">
+                  <div class="col-md-6 mb-3">
+                     <label for="name">아이디</label> 
+                     <input type="text" class="form-control" name="id" id="id" placeholder="" value="" required >
+                     <input type="button" id="idcheck" class="btn btn-default" value="아이디중복검사"/>
+                     <span id = "result"></span>
+                     <br>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                     <label for="nickname">닉네임</label> <input type="text"
+                        class="form-control" name="nick" id="nick" placeholder=""
+                        value="" required>
 
-						</div>
-					</div>
+                  </div>
+               </div>
 
-					<div class="row">
-						<div class="col-md-12 mb-3">
-							<label for="name">비밀번호</label> <input type="password"
-								class="form-control" name="pw" id="pw" placeholder=""
-								onchange="check_pw()" required>
+               <div class="row">
+                  <div class="col-md-12 mb-3">
+                     <label for="name">비밀번호</label> <input type="password"
+                        class="form-control" name="pw" id="pw" placeholder=""
+                        onchange="check_pw()" required>
 
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-8 mb-3">
-							<label for="root">성별</label> <select
-								class="custom-select d-block w-100" name="gender" id="gender">
-								<option value="men">남자</option>
-								<option value="women">여자</option>
-							</select>
-							<div class="invalid-feedback">성별 를 선택해주세요.</div>
-						</div>
-						<div class="col-md-4 mb-3">
-							<label for="code">나이</label> <input type="text"
-								class="form-control" name="age" id="age"
-								placeholder="나이를 입력해주세요.">
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-md-8 mb-3">
+                     <label for="root">성별</label> <select
+                        class="custom-select d-block w-100" name="gender" id="gender">
+                        <option value="men">남자</option>
+                        <option value="women">여자</option>
+                     </select>
+                     <div class="invalid-feedback">성별 를 선택해주세요.</div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                     <label for="code">나이</label> <input type="text"
+                        class="form-control" name="age" id="age"
+                        placeholder="나이를 입력해주세요.">
 
-						</div>
-					</div>
-					<hr class="mb-4">
-					<div class="custom-control custom-checkbox">
-						<input type="checkbox" class="custom-control-input" id="aggrement"
-							required> <label class="custom-control-label"
-							for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
-					</div>
-					<div class="mb-4"></div>
-					<button class="btn btn-primary btn-lg btn-block" type="submit">가입
-						완료</button>
-				</form>
-			</div>
-		</div>
-	</div>
-	<script>
+                  </div>
+               </div>
+               <hr class="mb-4">
+               <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="aggrement"
+                     required> <label class="custom-control-label"
+                     for="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
+               </div>
+               <div class="mb-4"></div>
+               <button class="btn btn-primary btn-lg btn-block" type="submit">가입
+                  완료</button>
+            </form>
+         </div>
+      </div>
+   </div>
+   <script>
     window.addEventListener('load', () => {
       const forms = document.getElementsByClassName('validation-form');
 
@@ -124,8 +124,8 @@
       });
     }, false);
   </script>
-	<!--비밀번호 길이제한-->
-	<script>
+   <!--비밀번호 길이제한-->
+   <script>
     function check_pw(){
         var pw = document.getElementById('pw').value;
         var SC = ["!","@","#","$","%"];
@@ -148,7 +148,7 @@
 </script>
 <script type="text/javascript">
 $('#idcheck').click(function () {
-	let id = $('#idcheck')
+   let id = $('#idcheck')
     if ($('#id').val() != '') {
         $.ajax({
             type: 'post',
@@ -156,28 +156,28 @@ $('#idcheck').click(function () {
             data: {id:id},
             dataType: 'json',
             success: function(result) {
-            	console.log(res);
-				if(result == "true"){							
-					$('#result').html('사용 가능한 아이디 입니다');
-					$('#result').css('color', 'black');
-				} else{						
-					$('#result').html('중복된 아이디 입니다');
-					$('#result').css('color', 'tomato');
-				}
+               console.log(res);
+            if(result == "true"){                     
+               $('#result').html('사용 가능한 아이디 입니다');
+               $('#result').css('color', 'black');
+            } else{                  
+               $('#result').html('중복된 아이디 입니다');
+               $('#result').css('color', 'tomato');
+            }
             },
             error: function() {alert("error");}
-   					
+                  
         });
-   				
+               
     } else {
         alert('아이디를 입력하세요.');
         $('#id').focus();
     }
-   			
+            
 });
 </script>
 
-	
+   
 
 </body>
 </html>

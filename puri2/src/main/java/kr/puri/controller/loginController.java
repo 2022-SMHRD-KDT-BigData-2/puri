@@ -19,16 +19,14 @@ public class loginController {
    @Autowired
    private PuriMapper puriMapper;
    
-   @GetMapping("/loginout.do")
-   public String loginout() {
-      System.out.println("11");
-      
+   @GetMapping("/goLogin.do")
+   public String goLogin() {
       return "Login";
    } 
    
    @PostMapping("/login.do")
    public String login(Member vo, HttpServletRequest request) {
-      Member theVo=puriMapper.memberLogin(vo);
+      Member theVo=puriMapper.Login(vo);
       if(theVo != null) {
          // 로그인에 성공한 경우
          // 1. 세션객체를 생성한다.

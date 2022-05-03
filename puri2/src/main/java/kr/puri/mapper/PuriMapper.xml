@@ -8,7 +8,7 @@
 		insert into member values(#{id}, #{pw}, #{nick}, #{gender}, #{age})
 	</insert>
 
-	<select id="memberLogin" resultType="kr.puri.entity.Member"
+	<select id="Login" resultType="kr.puri.entity.Member"
 		parameterType="kr.puri.entity.Member">
 		select * from Member where id=#{id} and pw=#{pw}
 	</select>

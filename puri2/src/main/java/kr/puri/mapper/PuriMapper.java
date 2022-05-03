@@ -12,7 +12,7 @@ public interface PuriMapper {
 	// 회원가입
 	public void SignUp(Member vo);
 
-	public Member memberLogin(Member vo);
+	public Member Login(Member vo);
 
 	public List<Member> memberList();
 

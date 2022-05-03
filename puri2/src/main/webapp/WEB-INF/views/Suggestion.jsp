@@ -60,8 +60,6 @@
 
 		<!-- 여기부터 추천 -->
 		<div id="center">
-		<progress id="progress" value="0" min="0"
-									max="100"></progress>
 		  
          
          <!-- 퀴즈 1 -->
@@ -83,20 +81,12 @@
 				<button id="answer2" type="submit" name="question_1" class="btn btn-primary"
 					value=0>음.. 우선 씻고 나와서 할 일부터 했는데요.</button> 
 					</li>
+		<li><progress id="progress" value="0" min="0" max="100"></progress></li>
 					</ul>
 			</div>
 			
          </fieldset>
         </div>
-
-
-
-
-
-
-
-
-
 
 		<!-- 하단 -->
 		<div id="copyright" class="container">

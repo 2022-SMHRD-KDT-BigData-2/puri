@@ -77,6 +77,20 @@ p {
 	margin-bottom: 200px;
 	
 }
-#d{
-	
+/*게이지바*/
+#progress {
+	appearance: none;
+}
+
+#progress::-webkit-progress-bar {
+	background: #e9f2d6;
+	border-radius: 10px;
+	/*box-shadow: inset 3px 3px 10px #ccc;*/
+}
+
+#progress::-webkit-progress-value {
+	border-radius: 10px;
+	background: #0ab639;
+	background: -webkit-linear-gradient(to right, #c3dc8d, #89d47d);
+	background: linear-gradient(to right, #c3dc8d, #89d47d);
 }

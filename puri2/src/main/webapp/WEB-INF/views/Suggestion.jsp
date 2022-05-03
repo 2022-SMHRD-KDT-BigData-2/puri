@@ -28,7 +28,7 @@
 		<header class="top-bar">
 			<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
 				<h1 class="log">
-					<img src="./resources/images/logo555.png" alt="" />
+					<a href="<c:url value="/main.do"/>"><img src="./resources/images/logo555.png" alt="" /></a>
 				</h1>
 				<nav>
 					<ul class="menu">
@@ -60,7 +60,9 @@
 
 		<!-- 여기부터 추천 -->
 		<div id="center">
-		  <h1 class="topmenu">어떤 식물을 키울까요~?</h1>
+		<progress id="progress" value="0" min="0"
+									max="100"></progress>
+		  
          
          <!-- 퀴즈 1 -->
          <fieldset class="fie1">

@@ -44,7 +44,7 @@
                   </div>
                </div>
                <div class="where">
-                  <a href="register.php">회원가입</a>&nbsp;| <a href="">아이디/비밀번호 찾기</a>
+                  <a href="<c:url value="/goSignUp.do"/>">회원가입</a>&nbsp;| <a href="">아이디/비밀번호 찾기</a>
                </div>
                <div class="mb-4"></div>
                <button id="btn" class="btn btn-primary btn-lg btn-block"

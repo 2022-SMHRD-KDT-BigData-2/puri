@@ -35,7 +35,7 @@ out.print(vo.getId());
 	<header class="top-bar">
 
 		<h1 class="log">
-			<img src="./resources/images/logo555.png" alt="" />
+			<a href="<c:url value="/main.do"/>"><img src="./resources/images/logo555.png" alt="" /></a>
 		</h1>
 		<nav>
 			<ul class="menu">

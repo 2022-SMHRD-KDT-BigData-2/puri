@@ -37,7 +37,7 @@ out.print(vo);
    <header class="top-bar">
       <div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
          <h1 class="log">
-            <img src="./resources/images/logo555.png" alt="" />
+           <a href="<c:url value="/main.do"/>"> <img src="./resources/images/logo555.png" alt="" /></a>
          </h1>
          <nav>
             <ul class="menu">

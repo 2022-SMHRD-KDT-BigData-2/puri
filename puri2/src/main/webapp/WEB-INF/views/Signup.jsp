@@ -57,10 +57,9 @@
             <form action="SignUp.do">
                <div class="row">
                   <div class="col-md-6 mb-3">
-                     <label for="name">아이디</label> 
+                     <label for="id">아이디</label> 
                      <input type="text" class="form-control" name="id" id="id" placeholder="" value="" required >
-                     <input type="button" id="idcheck" class="btn btn-default" value="아이디중복검사"/>
-                     <span id = "result"></span>
+                     <div class="check_font" id="id_check"></div>
                      <br>
                   </div>
                   <div class="col-md-6 mb-3">
@@ -146,6 +145,8 @@
         }
     }
 </script>
+
+
 
 
    

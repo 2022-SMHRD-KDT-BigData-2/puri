@@ -8,16 +8,14 @@
 		insert into member values(#{id}, #{pw}, #{nick}, #{gender}, #{age})
 	</insert>
 
-	<!-- 아이디 중복체크 -->
-	<select id="idcheck" resultType="kr.puri.entity.Member">
-		select * from member where id=#{id}
-	</select>
-
 	<select id="memberLogin" resultType="kr.puri.entity.Member"
 		parameterType="kr.puri.entity.Member">
 		select * from Member where id=#{id} and pw=#{pw}
 	</select>
 
-
+     <select id="memberList" resultType="kr.puri.entity.Member">
+      select * from Member
+  	 </select>
+ 
 
 </mapper>

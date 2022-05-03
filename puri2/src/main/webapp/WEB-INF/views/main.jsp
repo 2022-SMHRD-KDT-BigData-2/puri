@@ -17,6 +17,12 @@
 </head>
 
 <body class="homepage is-preload">
+<%
+HttpSession session = request.getSession();
+Member vo = (Member)session.getAttribute("vo");
+out.print(vo);
+%>
+
 	<!--  <div id="page-wrapper">-->
 	<!-- Header -->
 	<!-- 영상 -->
@@ -30,32 +36,29 @@
 	<!-- 상단메뉴 -->
 	<header class="top-bar">
 		<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
-			<h1 class="log">
-				<img src="./resources/images/logo555.png" alt="" />
-			</h1>
-			<nav>
-				<ul class="menu">
-					<c:catch>
-						<c:choose>
-							<c:when test="${empty mvo}">
-								<!-- <li><a id="popup_layer"
-									href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
-								 <li><a href="<c:url value="/loginout.do"/>">로그인 </a></li>
-								<li style="margin-right: 10em"><a
-									href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="#">로그아웃 </a></li>
-								<li><a href="#">반려식물 추천 </a></li>
-								<li><a href="#">병해충 판독</a></li>
-								<li><a href="#">커뮤니티</a></li>
-								<li><a href="#">마이페이지</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:catch>
-				</ul>
-			</nav>
-		</div>
+         <h1 class="log">
+            <img src="./resources/images/logo555.png" alt="" />
+         </h1>
+         <nav>
+            <ul class="menu">
+            <%if(vo==null){ %>
+                        <!-- <li><a id="popup_layer"
+                           href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
+                         <li><a href="<c:url value="/loginout.do"/>">로그인 </a></li>
+                        <li style="margin-right: 10em"><a
+                           href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
+               
+                  <%}else{ %>
+                        <li><a href="${path}/logout.do">로그아웃 </a></li>
+                        <li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+                        <li><a href="#">병해충 판독</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                        <li><a href="#">마이페이지</a></li>
+                  <%} %>
+            </ul>
+         </nav>
+      </div>
+
 	</header>
 	<!-- 게시글 -->
 	<div class="wrapper">

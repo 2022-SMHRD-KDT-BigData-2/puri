@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 
 import kr.puri.entity.Member;
+import kr.puri.entity.Q_Answer;
 
 @Mapper
 public interface PuriMapper {
@@ -15,5 +16,11 @@ public interface PuriMapper {
 	public Member Login(Member vo);
 
 	public List<Member> memberList();
+	
+	public String idCheck(String id);
+
+	public void q_anwerInsert(Q_Answer qvo);
+
+	
 
 }

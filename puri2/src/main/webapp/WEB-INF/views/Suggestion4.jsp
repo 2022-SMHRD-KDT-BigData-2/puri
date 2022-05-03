@@ -23,7 +23,7 @@
 	Member vo = (Member) session.getAttribute("vo");
 	out.print(vo);
 	%>
-	<form action="${path}/Suggestion3.do" method="post">
+	<form action="${path}/Suggestion5.do" method="post">
 		<!-- 상단메뉴 -->
 		<header class="top-bar">
 			<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
@@ -65,7 +65,7 @@
          <!-- 퀴즈 1 -->
          <fieldset class="fie1">
             <fieldset>
-               <p>내가 청소를 하는 이유는?</P>
+               <p>연인에게 꽃 선물을 받으면 어때?</P>
                
             </fieldset>
         
@@ -73,13 +73,13 @@
             <ul>
             <li>
             
-				<button id="answer1" type="submit" name="question_2" class="btn btn-primary"
-					value=1>집에서 애완동물의 털이 날려서</button> 
+				<button id="answer1" type="submit" name="question_4" class="btn btn-primary"
+					value=1>좋아! 나는 꽃을 좋아하거든</button> 
 			
 			</li>
           <li>
-				<button id="answer2" type="submit" name="question_2" class="btn btn-primary"
-					value=0 >깨끗한 집이 좋아서</button> 
+				<button id="answer2" type="submit" name="question_4" class="btn btn-primary"
+					value=0>아니 꽃보다 다른 선물이면 좋겠어</button> 
 					</li>
 					</ul>
 			</div>

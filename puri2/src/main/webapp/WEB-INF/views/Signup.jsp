@@ -36,8 +36,8 @@
 						<div class="col-md-12 mb-3">
 							<label class="bottommargin" for="id">아이디</label> <span
 								class="signup-input"> <input class="form-control"
-								style="width: 90%;" id="id" type="text" name="id">&nbsp&nbsp
-								<button class="checkbtn" type="button" onclick="IdCheck()">Check</button>
+								style="width: 90%;" id="id" name="id">&nbsp&nbsp
+								<button class="checkbtn" type="button" id="idcheck">Check</button>
 							</span>
 						</div>
 					</div>
@@ -149,7 +149,39 @@
     }
 </script>
 
-
+<script>
+				$(function() {
+					$('#idcheck').click(function () {
+						
+						
+						 var id = document.getElementById('id').value;
+						 console.log(id)
+						 /* var form = {
+					         id : document.getElementById('id').value,      
+					     } */
+						 
+						$.ajax({
+							url : "${cpath}/idCheck",
+							type : "post",
+						    dataType : "json",
+							data : {"id" : id},
+						/* 	dataType : "json",
+							data : JSON.stringify(form), */
+							success:function(data){
+								if(data == 'true'){							
+									$('#result').html('사용 가능한 아이디 입니다');
+									$('#result').css('color', 'black');
+								} else{						
+									$('#result').html('중복된 아이디 입니다');
+									$('#result').css('color', 'tomato');
+								}
+							},
+							error : function(){ alert("error"); } 
+						})
+					})
+					
+				})
+	</script>
 
 
 

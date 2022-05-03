@@ -26,6 +26,6 @@ public class SuggestionController {
       return "Suggestion"; // ->/WEB_INF/views/boardList.jsp
    }
 
-   
+  
 
 }

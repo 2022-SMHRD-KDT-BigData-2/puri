@@ -22,6 +22,11 @@ public class Member {
 		this.pw = pw;
 	}
 	
+	public Member(String id) {
+		this.id = id;
+		
+	}
+	
 	public String getId() {
 		return id;
 	}
@@ -60,6 +65,8 @@ public class Member {
 	public void setAge(int age) {
 		this.age = age;
 	}
+
+	
 	   
 	   
 }

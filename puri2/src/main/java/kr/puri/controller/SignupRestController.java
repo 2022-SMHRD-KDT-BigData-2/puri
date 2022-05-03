@@ -14,13 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.puri.entity.Member;
 import kr.puri.mapper.PuriMapper;
 
-@RestController
+
 @Controller
 public class SignupRestController {
 	@Autowired
 	private PuriMapper puriMapper;
+
+	@PostMapping("/idCheck")
+	@ResponseBody
+	public void idCheck(String id) {
+		System.out.println("ff");
+		System.out.println(id);
+	}
 	
 	
-	
-	
+
 }

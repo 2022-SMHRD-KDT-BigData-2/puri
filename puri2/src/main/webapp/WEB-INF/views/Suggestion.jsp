@@ -1,108 +1,129 @@
 <%@page import="kr.puri.entity.Member"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<c:set var="cpath" value="${pageContext.request.contextPath}" />
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="${cpath}/resources/css/Mypage.css" rel="stylesheet" />
-<link href="${cpath}/resources/css/font-awesome.min.css"
-	rel="stylesheet">
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+	language="java"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
+<script src="${path}/resources/js/test.js"></script>
+<link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="${path}/resources/css/main3.css" rel="stylesheet" />
+<link href="${path}/resources/css/Suggestion.css" rel="stylesheet" />
 <html>
 <meta charset="EUC-KR">
 
 <head>
 <style type="text/css">
 </style>
-<title>Puri-Mypage</title>
+<title>Puri</title>
 </head>
 
-<body>
-	<!-- 상단메뉴 -->
-	<header class="top-bar">
+<body class="homepage is-preload">
+	<%
+		HttpSession session = request.getSession();
+	Member vo = (Member) session.getAttribute("vo");
+	out.print(vo);
+	%>
+	<form novalidate action="${path}/Suggestion2.do" method="post">
+		<!-- 상단메뉴 -->
+		<header class="top-bar">
+			<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
+				<h1 class="log">
+					<img src="./resources/images/logo555.png" alt="" />
+				</h1>
+				<nav>
+					<ul class="menu">
+						<%
+							if (vo == null) {
+						%>
+						<!-- <li><a id="popup_layer"
+                           href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
+						<li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
+						<li style="margin-right: 10em"><a
+							href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
 
-		<h1 class="log">
-			<img src="./resources/images/logo555.png" alt="" />
-		</h1>
-		<nav>
-			<ul class="menu">
-				<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
-				<li><a href="#">병해충 판독</a></li>
-				<li><a href="#">커뮤니티</a></li>
-				<li><a href="#">마이페이지</a></li>
-				<li style="margin-right: 10em"><a href="${cpath}/logout.do">로그아웃
-				</a></li>
-			</ul>
-		</nav>
-
-	</header>
-
-	<!-- 고양이 -->
-	<div class="container">
-		<div class="card">
-			<div class="container-fliud">
-				<div class="wrapper row">
-					<!-- 이미지 -->
-					<div class="preview col-md-6">
-						<ul class="puricenter">
-							<li>닉네임</li>
-							<li><img src="./resources/images/re1.png" class="smallsize"></li>
-							<li>출석 &nbsp <progress value="20" max="100"></progress></li>
-							<li>댓글 &nbsp <progress value="20" max="100"></progress></li>
-						</ul>
-					<div class="action" style="text-align: center;">
-						<button >도감</button>
-						<button >진화</button>
-						</div>
-					</div>
-					<div class="details col-md-6">
-						<h3 class="product-title">My plant list</h3>
-						
-						<ul>
-						<c:forEach var="vo" items="${list}">
-							<li>찜</li>
-						</c:forEach>
-						</ul>
-						<p class="product-description">Suspendisse quos? Tempus cras
-							iure temporibus? Eu laudantium cubilia sem sem! Repudiandae et!
-							Massa senectus enim minim sociosqu delectus posuere.</p>
-						<h4 class="price">
-							current price: <span>$180</span>
-						</h4>
-						<p class="vote">
-							<strong>91%</strong> of buyers enjoyed this product! <strong>(87
-								votes)</strong>
-						</p>
-						<h5 class="sizes">
-							sizes: <span class="size" data-toggle="tooltip" title="small">s</span>
-							<span class="size" data-toggle="tooltip" title="medium">m</span>
-							<span class="size" data-toggle="tooltip" title="large">l</span> <span
-								class="size" data-toggle="tooltip" title="xtra large">xl</span>
-						</h5>
-						<h5 class="colors">
-							colors: <span class="color orange not-available"
-								data-toggle="tooltip" title="Not In store"></span> <span
-								class="color green"></span> <span class="color blue"></span>
-						</h5>
-						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
-							<button class="like btn btn-default" type="button">
-								<span class="fa fa-heart"></span>
-							</button>
-						</div>
-					</div>
-				</div>
+						<%
+							} else {
+						%>
+						<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+						<li><a href="#">병해충 판독</a></li>
+						<li><a href="#">커뮤니티</a></li>
+						<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
+						<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
+						</a></li>
+						<%
+							}
+						%>
+					</ul>
+				</nav>
 			</div>
-		</div>
-	</div>
-</body>
+		</header>
 
+		<!-- 여기부터 추천 -->
+		<div id="center">
+		  <h1 class="topmenu">어떤 식물을 키울까요~?</h1>
+         
+         <!-- 퀴즈 1 -->
+         <fieldset class="fie1">
+            <fieldset>
+               <p>집에 오면 제일 먼저 뭐부터 했지?</P>
+               
+            </fieldset>
+        
+            <div class="cmd" >
+            <ul>
+            <li>
+            
+				<button id="answer1" type="submit" name="question_1" class="btn btn-primary"
+					value=1>어.. 당연히 옷 벗기도 전에 침대에 누웠죠..</button> 
+			
+			</li>
+          <li>
+				<button id="answer2" type="submit" name="question_1" class="btn btn-primary"
+					value=0>음.. 우선 씻고 나와서 할 일부터 했는데요.</button> 
+					</li>
+					</ul>
+			</div>
+			
+         </fieldset>
+        </div>
+
+
+
+
+
+
+
+
+
+
+		<!-- 하단 -->
+		<div id="copyright" class="container">
+			<!--   <ul class="menu">
+         <li class="icon brands fa-twitter"><a href="#"><span
+               class="extra"></span></a></li>
+         <li class="icon brands fa-facebook-f"><a href="#"><span
+               class="extra"></span></a></li>
+         <li class="icon brands fa-youtube"><a href="#"><span
+               class="extra"></span></a></li>
+         <li class="icon brands fa-instagram"><a href="#"><span
+               class="extra"></span></a></li>
+      </ul>-->
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			</ul>
+		</div>
+		</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</form>
+</body>
 </html>

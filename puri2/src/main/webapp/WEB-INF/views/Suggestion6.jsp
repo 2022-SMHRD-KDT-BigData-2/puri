@@ -23,7 +23,7 @@
 	Member vo = (Member) session.getAttribute("vo");
 	out.print(vo);
 	%>
-	<form action="${path}/Suggestion3.do" method="post">
+	<form action="${path}/Suggestion7.do" method="post">
 		<!-- 상단메뉴 -->
 		<header class="top-bar">
 			<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
@@ -65,7 +65,7 @@
          <!-- 퀴즈 1 -->
          <fieldset class="fie1">
             <fieldset>
-               <p>내가 청소를 하는 이유는?</P>
+               <p>집 안의 맑은 공기를 위해 선택한 방법은?</P>
                
             </fieldset>
         
@@ -73,13 +73,13 @@
             <ul>
             <li>
             
-				<button id="answer1" type="submit" name="question_2" class="btn btn-primary"
-					value=1>집에서 애완동물의 털이 날려서</button> 
+				<button id="answer1" type="submit" name="question_6" class="btn btn-primary"
+					value=1>돈이 최고,, 공기청정기!</button> 
 			
 			</li>
           <li>
-				<button id="answer2" type="submit" name="question_2" class="btn btn-primary"
-					value=0 >깨끗한 집이 좋아서</button> 
+				<button id="answer2" type="submit" name="question_6" class="btn btn-primary"
+					value=0>나랑 같이 살아가는 반려식물!</button> 
 					</li>
 					</ul>
 			</div>

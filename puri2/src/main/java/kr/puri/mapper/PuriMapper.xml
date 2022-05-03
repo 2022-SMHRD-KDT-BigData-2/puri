@@ -5,7 +5,8 @@
 <mapper namespace="kr.puri.mapper.PuriMapper">
 	<!-- 회원가입 -->
 	<insert id="SignUp" parameterType="kr.puri.entity.Member">
-		insert into member values(#{id}, #{pw}, #{nick}, #{gender}, #{age})
+		insert into member
+		values(#{id}, #{pw}, #{nick}, #{gender}, #{age})
 	</insert>
 
 	<select id="Login" resultType="kr.puri.entity.Member"
@@ -13,9 +14,17 @@
 		select * from Member where id=#{id} and pw=#{pw}
 	</select>
 
-     <select id="memberList" resultType="kr.puri.entity.Member">
-      select * from Member
-  	 </select>
- 
+	<select id="memberList" resultType="kr.puri.entity.Member">
+		select * from Member
+	</select>
+
+	<select id="idCheck" parameterType="kr.puri.entity.Member" resultType="String">
+		SELECT count(*) FROM member WHERE id = #{id}
+	</select>
+	
+	<insert id="q_anwerInsert" parameterType="kr.puri.entity.Q_Answer">
+      insert into question values(question_seq.nextval, #{question_1}, #{question_2}, #{question_3}, #{question_4}, #{question_5}, #{question_6}, #{question_7}, #{id})
+   </insert>
+	
 
 </mapper>

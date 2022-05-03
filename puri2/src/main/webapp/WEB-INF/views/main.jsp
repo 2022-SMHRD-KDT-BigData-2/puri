@@ -52,7 +52,7 @@ out.print(vo);
                         <li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
                         <li><a href="#">병해충 판독</a></li>
                         <li><a href="#">커뮤니티</a></li>
-                        <li><a href="#">마이페이지</a></li>
+                        <li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
                         <li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃 </a></li>
                   <%} %>
             </ul>

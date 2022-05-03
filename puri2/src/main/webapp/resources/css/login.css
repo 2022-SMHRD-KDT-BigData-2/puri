@@ -1,6 +1,46 @@
+.signup-input{
+    display:flex;
+    /* margin: 0px 10px 8px 10px; */
+    padding: 10px;
+    background: #fff;
+    cursor: pointer;
+}
+.signup-input-c{
+    display:flex;
+    /* margin: 0px 10px 8px 10px; */
+    padding: 10px;
+    border: solid 1px #dadada;
+    background: #f5f6f7;
+    cursor: pointer;
+}
+.signup-input-c input{
+    background: #f5f6f7;
+    
+}
+
+a{
+	color: #000;!important 
+}
+
+.bottommargin{
+	margin-bottom: 0em;!important 
+}
+
+
+
+.checkbtn{
+	color: #fff;
+	background-color: #69b27a;
+	border-color: #69b27a;
+	border: 1px;
+	float: right;
+	border-radius: 5px;
+}
+
 .container {
    min-height: 100vh;
-  background-color: rgba(0, 0, 0, .5);
+  /*background-color: rgba(0, 0, 0, .5);*/
+  background-color: rgb(178 212 172 / 50%);
 }
 
 .input-form {

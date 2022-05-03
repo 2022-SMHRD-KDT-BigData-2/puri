@@ -25,11 +25,12 @@
       <div class="input-form-backgroud row">
          <div class="input-form col-md-12 mx-auto">
             
-            <h4 class="mb-3" id="login">로그인</h4>
+            <h4 class="mb-3" id="login" >로그인</h4>
+            <hr class="mb-4">
             <form class="validation-form" novalidate action="${cpath}/login.do" method="post">
                <div class="row">
                   <div class="col-md-12 mb-3">
-                     <label for="name">아이디</label> <input type="text"
+                     <label  for="name">아이디</label> <input type="text"
                         class="form-control" id="id" name="id" placeholder="" value="" required>
                      <div class="invalid-feedback">아이디을 입력해주세요.</div>
                   </div>
@@ -47,6 +48,7 @@
                </div>
                <div class="mb-4"></div>
                <button id="btn" class="btn btn-primary btn-lg btn-block"
+               style="border-color: #69b27a; background-color: #69b27a;"
                   type="submit">로그인</button>
             </form>
          </div>

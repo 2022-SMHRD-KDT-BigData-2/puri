@@ -1,91 +1,109 @@
 <%@page import="kr.puri.entity.Member"%>
-<%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="cpath" value="${pageContext.request.contextPath}" />
-<!DOCTYPE html>
-<html lang="en">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
+	language="java"%>
+<c:set var="path" value="${pageContext.request.contextPath}" />
+<script src="${path}/resources/js/test.js"></script>
+<link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="${path}/resources/css/Community.css" rel="stylesheet" />
+
+<html>
+<meta charset="EUC-KR">
+
 <head>
-<title>Puri-List</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+<style type="text/css">
+</style>
+<title>Puri</title>
 </head>
-<body>
-<form action="${path}/goCommunity.do" method="get">
-	<nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
-		<a class="navbar-brand" href="#">Navbar</a>
-		<ul class="nav nav-pills">
-			<li class="nav-item"><a class="nav-link"
-				href="#scrollspyHeading1">First</a></li>
-			<li class="nav-item"><a class="nav-link"
-				href="#scrollspyHeading2">Second</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-				role="button" aria-expanded="false">Dropdown</a>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
-					<li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
-					<li><hr class="dropdown-divider"></li>
-					<li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
-				</ul></li>
+
+<body class="homepage is-preload">
+	<%
+		HttpSession session = request.getSession();
+	Member vo = (Member) session.getAttribute("vo");
+	out.print(vo);
+	%>
+
+	<!-- 상단메뉴 -->
+	<header class="top-bar">
+		<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
+			<h1 class="log">
+				<a href="<c:url value="/main.do"/>"> <img
+					src="./resources/images/logo555.png" alt="" /></a>
+			</h1>
+			<nav>
+				<ul class="menu">
+					<%
+						if (vo == null) {
+					%>
+					<!-- <li><a id="popup_layer"
+                           href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
+					<li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
+					<li style="margin-right: 10em"><a
+						href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
+
+					<%
+						} else {
+					%>
+					<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+					<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
+					<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
+					<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
+					<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
+					</a></li>
+					<%
+						}
+					%>
+				</ul>
+			</nav>
+		</div>
+
+	</header>
+	<!-- 게시글 -->
+	<div class="wrapper">
+	<div class="gala">
+		<table class="teables">
+			<tr>
+				<th class="sizemin">제목</th>
+				<th>내용</th>
+				<th class="sizemin">작성자</th>
+			</tr>
+			<tr>
+				<td class="sizemin">제목</td>
+				<td>내용</td>
+				<td class="sizemin"><%=vo.getNick() %></td>
+			</tr>
+			<tr>
+				<td class="sizemin">제목</td>
+				<td>내용</td>
+				<td class="sizemin"><%=vo.getNick() %></td>
+			</tr>
+		</table>
+	</div>
+	<!-- 페이지 버튼 -->
+	<div class="paging">
+		<a href="#">이전</a>
+		<a href="#">1</a>
+		<a href="#">2</a>
+		<a href="#">3</a>
+		<a href="#">4</a>
+		<a href="#">다음</a>
+	</div>
+	</div>
+	
+	<div id="copyright" class="container">
+		<ul class="menu">
+			<li>&copy; Untitled. All rights reserved.</li>
+			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 		</ul>
-	</nav>
-	<!--게시판-->
-	<div class="page-wrapper">
-		<div class="container-fluid">
-			<div class="col-lg-12">
-				<div class="col-lg-12">
-					<h1 class="page-header">board</h1>
-				</div>
-				<div class="row">
-					<div class="col-lg-12">
-						<button type="button"
-							class="btn btn-outline btn-primary pull-right">
-							<i class="fa fa-edit fa-fw"></i>글작성
-						</button>
-					</div>
-				</div>
-				<div class="panel panel-default">
-					<div>
-						<div class="panel-body ">
-							<table class="table table-hover table-bordered">
-								<thead>
-									<tr>
-										<th>No.1</th>
-										<th>제목</th>
-										<th>작성자</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>1</td>
-										<td>제목</td>
-										<td>작성자</td>
-									</tr>
-								</tbody>
-							</table>
-							<div aria-label="Page navigation example" class="center-bar">
-								<ul class="pagination justify-content-center">
-									<li class="page-item disabled"><a class="page-link"
-										href="#" tabindex="-1" aria-disabled="true">Previous</a></li>
-									<li class="page-item"><a class="page-link" href="#">1</a></li>
-									<li class="page-item"><a class="page-link" href="#">2</a></li>
-									<li class="page-item"><a class="page-link" href="#">3</a></li>
-									<li class="page-item"><a class="page-link" href="#">Next</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-		</form>
+	</div>
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
 </body>
 </html>

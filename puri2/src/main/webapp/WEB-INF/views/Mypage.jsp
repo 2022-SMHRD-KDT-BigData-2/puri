@@ -26,25 +26,41 @@
 </head>
 
 <body>
-<%
-HttpSession session = request.getSession();
-Member vo = (Member)session.getAttribute("vo");
-out.print(vo.getId());
-%>
+	<%
+		HttpSession session = request.getSession();
+	Member vo = (Member) session.getAttribute("vo");
+	out.print(vo.getId());
+	%>
 	<!-- 상단메뉴 -->
 	<header class="top-bar">
 
 		<h1 class="log">
-			<a href="<c:url value="/main.do"/>"><img src="./resources/images/logo555.png" alt="" /></a>
+			<a href="<c:url value="/main.do"/>"><img
+				src="./resources/images/logo555.png" alt="" /></a>
 		</h1>
 		<nav>
 			<ul class="menu">
-				<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
-				<li><a href="#">병해충 판독</a></li>
-				<li><a href="#">커뮤니티</a></li>
-				<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
-				<li style="margin-right: 10em"><a href="${cpath}/logout.do">로그아웃
-				</a></li>
+				<%
+						if (vo == null) {
+					%>
+					<!-- <li><a id="popup_layer"
+                           href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
+					<li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
+					<li style="margin-right: 10em"><a
+						href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
+
+					<%
+						} else {
+					%>
+					<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+					<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
+					<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
+					<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
+					<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
+					</a></li>
+					<%
+						}
+					%>
 			</ul>
 		</nav>
 
@@ -57,8 +73,12 @@ out.print(vo.getId());
 				<div class="wrapper row">
 					<!-- 이미지 -->
 					<div class="preview col-md-6">
+
+
+						<h4 class="Nick"><%=vo.getNick()%></h4>
+
+
 						<ul class="puricenter">
-							<li><%=vo.getNick() %></li>
 							<li><img src="./resources/images/re1.png" class="smallsize"></li>
 							<li>출석 &nbsp <progress id="progress" value="20" min="0"
 									max="100"></progress></li>
@@ -81,12 +101,12 @@ out.print(vo.getId());
 							<button id="mar" class="save">저장</button>
 							<button class="save">수정</button>
 						</div>
-						
+
 						<h3 class="product-title">Plant list</h3>
 						<ul>
 							<c:forEach var="vo" items="${list}">
 								<li>목록</li>
-								
+
 							</c:forEach>
 						</ul>
 					</div>

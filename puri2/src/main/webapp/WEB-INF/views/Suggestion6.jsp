@@ -28,7 +28,8 @@
 		<header class="top-bar">
 			<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
 				<h1 class="log">
-					<a href="<c:url value="/main.do"/>"><img src="./resources/images/logo555.png" alt="" /></a>
+					<a href="<c:url value="/main.do"/>"><img
+						src="./resources/images/logo555.png" alt="" /></a>
 				</h1>
 				<nav>
 					<ul class="menu">
@@ -45,8 +46,8 @@
 							} else {
 						%>
 						<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
-						<li><a href="#">병해충 판독</a></li>
-						<li><a href="#">커뮤니티</a></li>
+						<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
+						<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
 						<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
 						<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
 						</a></li>
@@ -60,32 +61,34 @@
 
 		<!-- 여기부터 추천 -->
 		<div id="center">
-		  <h1 class="topmenu">어떤 식물을 키울까요~?</h1>
-         
-         <!-- 퀴즈 1 -->
-         <fieldset class="fie1">
-            <fieldset>
-               <p>집 안의 맑은 공기를 위해 선택한 방법은?</P>
-               
-            </fieldset>
-        
-            <div class="cmd" >
-            <ul>
-            <li>
-            
-				<button id="answer1" type="submit" name="question_6" class="btn btn-primary"
-					value=1>돈이 최고,, 공기청정기!</button> 
-			
-			</li>
-          <li>
-				<button id="answer2" type="submit" name="question_6" class="btn btn-primary"
-					value=0>나랑 같이 살아가는 반려식물!</button> 
-					</li>
+			<h1 class="topmenu">
+				<progress id="progress" value="75" min="0" max="100"></progress>
+			</h1>
+
+			<!-- 퀴즈 1 -->
+			<fieldset class="fie1">
+				<fieldset>
+					<p>집 안의 맑은 공기를 위해 선택한 방법은?</P>
+
+				</fieldset>
+
+				<div class="cmd">
+					<ul>
+						<li>
+
+							<button id="answer1" type="submit" name="q_6"
+								class="btn btn-primary" value=1>돈이 최고,, 공기청정기!</button>
+
+						</li>
+						<li>
+							<button id="answer2" type="submit" name="q_6"
+								class="btn btn-primary" value=0>나랑 같이 살아가는 반려식물!</button>
+						</li>
 					</ul>
-			</div>
-			
-         </fieldset>
-        </div>
+				</div>
+
+			</fieldset>
+		</div>
 
 
 

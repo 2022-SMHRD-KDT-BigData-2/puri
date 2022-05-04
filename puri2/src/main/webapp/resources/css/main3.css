@@ -4,7 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 @font-face {
-	font-family: 'SF_HailSnow';
+	font-family: 'SF_HailSnow';!important;
 	src:
 		url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
 		format('woff');
@@ -200,7 +200,7 @@ a {
 }
 
 a:hover {
-	color: #f35858;
+	color: #008040;
 	border-bottom-color: rgba(255, 255, 255, 0);
 }
 

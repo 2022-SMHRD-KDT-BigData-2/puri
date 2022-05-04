@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+/*명찰*/
+.Nick {
+	display: inline;
+	background-image: url("images/colName.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-right: 2em;
+	text-align: center;
+	height: 50px;
+	line-height: 60px;
+	background-size: contain;
+	z-index: 2;
+}
+
 /* 가운데 줄 */
 #coma {
 	border-left: solid 1px #c2c7cc;
@@ -46,10 +60,12 @@ textarea {
 	max-height: 300px;
 	max-width: 230px;
 	margin-bottom: 1em;
+	margin-right: 2em;
 }
 
 .puricenter {
 	text-align: center;
+	margin-right: 1.5em;
 }
 
 /* 메인페이지 css*/
@@ -151,7 +167,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 
 table {
 	/*border-collapse: collapse;
-	border-spacing: 0;*/
+   border-spacing: 0;*/
 	border-spacing: 2em;
 	border-collapse: separate;
 }
@@ -256,7 +272,7 @@ a {
 }
 
 a:hover {
-	color: #f35858;
+	color: #008040;
 	border-bottom-color: rgba(255, 255, 255, 0);
 }
 
@@ -1612,7 +1628,6 @@ ul.actions.major {
 
 ul.actions li {
 	display: inline-block;
-	margin-left: 1em;
 	padding-left: 0;
 }
 
@@ -1782,7 +1797,8 @@ input[type="button"], input[type="submit"], input[type="reset"], button,
 	display: inline-block;
 	color: inherit;
 	background: none;
-	text-align: center; text-decoration : none;
+	text-align: center;
+	text-decoration: none;
 	border: solid 1px #c2c7cc;
 	border-radius: 0.35em;
 	padding: 0.2em 0.5em;
@@ -1873,24 +1889,24 @@ input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hove
 	top: 0;
 	z-index: 1;
 	/*box-shadow: inset 0px 0px 0px 1px #e8e8e8;
-			background: #f6f8fb url("images/image-wrapper.svg");*/
+         background: #f6f8fb url("images/image-wrapper.svg");*/
 }
 /*메인배너 */
 /*#header-wrapper {
-		position: relative;
-		padding: 5em 0 10em 0;
-		background-image: url("images/header.svg");
-		background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
-		background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #def4e6 15%, #346932 55%);
-		background-image: url("images/overlay.png"), url("images/banner4.png");
-		background-size: 100% 620%;
-		background-size: 128px 128px, 100% 620%, auto;
-		background-repeat: repeat, no-repeat, no-repeat;
-		
-		
-	}*/
+      position: relative;
+      padding: 5em 0 10em 0;
+      background-image: url("images/header.svg");
+      background-image: url("images/overlay.png"), url("images/header.svg"), -moz-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+      background-image: url("images/overlay.png"), url("images/header.svg"), -webkit-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+      background-image: url("images/overlay.png"), url("images/header.svg"), -ms-linear-gradient(75deg, #FF7088 15%, #F2B69D 55%);
+      background-image: url("images/overlay.png"), url("images/header.svg"), linear-gradient(75deg, #def4e6 15%, #346932 55%);
+      background-image: url("images/overlay.png"), url("images/banner4.png");
+      background-size: 100% 620%;
+      background-size: 128px 128px, 100% 620%, auto;
+      background-repeat: repeat, no-repeat, no-repeat;
+      
+      
+   }*/
 .imges {
 	text-align: center;
 	max-width: 100%;
@@ -2273,8 +2289,8 @@ input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hove
 	/* Hero */
 
 	/*#hero {
-				padding: 3.5em 4em 0 4em;
-			}*/
+            padding: 3.5em 4em 0 4em;
+         }*/
 	#hero h2 {
 		font-size: 2.75em;
 	}
@@ -2941,9 +2957,25 @@ img {
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 opacity
+
+
+
+
+
+
+
+
 
 
 
@@ -2953,7 +2985,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 1
+
+
+
+
+
+
+
+
 
 
 ;
@@ -2962,7 +3010,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -2970,7 +3034,23 @@ opacity
 scale
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -2980,7 +3060,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 ;
@@ -2989,7 +3085,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -2997,7 +3109,23 @@ transform
 scale
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -3007,7 +3135,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 ;
@@ -3024,9 +3168,25 @@ keyframes opacity { 0% {
 
 
 
+
+
+
+
+
+
+
+
 %
 {
 opacity
+
+
+
+
+
+
+
+
 
 
 
@@ -3036,7 +3196,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 1
+
+
+
+
+
+
+
+
 
 
 ;
@@ -3045,7 +3221,23 @@ opacity
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -3053,7 +3245,23 @@ opacity
 scale
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -3063,7 +3271,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 ;
@@ -3072,7 +3296,23 @@ transform
 
 
 
+
+
+
+
+
+
+
+
 :
+
+
+
+
+
+
+
+
 
 
 
@@ -3080,7 +3320,23 @@ transform
 scale
 
 
+
+
+
+
+
+
+
+
 (
+
+
+
+
+
+
+
+
 
 
 
@@ -3090,7 +3346,23 @@ scale
 
 
 
+
+
+
+
+
+
+
+
 )
+
+
+
+
+
+
+
+
 
 
 ;

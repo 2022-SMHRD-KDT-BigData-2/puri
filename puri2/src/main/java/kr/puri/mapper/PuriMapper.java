@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 
 import kr.puri.entity.Member;
-import kr.puri.entity.Q_Answer;
+import kr.puri.entity.Question;
 
 @Mapper
 public interface PuriMapper {
@@ -19,7 +19,7 @@ public interface PuriMapper {
 	
 	public String idCheck(String id);
 
-	public void q_anwerInsert(Q_Answer qvo);
+	public void q_Insert(Question qvo);
 
 	
 

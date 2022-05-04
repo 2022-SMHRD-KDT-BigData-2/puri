@@ -7,23 +7,24 @@
 <script src="${path}/resources/js/test.js"></script>
 <link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="${path}/resources/css/main3.css" rel="stylesheet" />
-<link href="${path}/resources/css/Suggestion.css" rel="stylesheet" />
+<link href="${path}/resources/css/SuggestionResult.css" rel="stylesheet" />
+<!DOCTYPE html>
 <html>
 <meta charset="EUC-KR">
-
 <head>
 <style type="text/css">
 </style>
-<title>Puri</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
-
 <body class="homepage is-preload">
 	<%
 		HttpSession session = request.getSession();
 	Member vo = (Member) session.getAttribute("vo");
 	out.print(vo);
 	%>
-	<form action="${path}/Suggestion4.do" method="post">
+
+	<form action="${path}/goSuggestionResult.do" method="get">
 		<!-- 상단메뉴 -->
 		<header class="top-bar">
 			<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
@@ -58,46 +59,12 @@
 				</nav>
 			</div>
 		</header>
-
-		<!-- 여기부터 추천 -->
-		<div id="center">
-			<h1 class="topmenu">
-				<progress id="progress" value="34" min="0" max="100"></progress>
-			</h1>
-
-			<!-- 퀴즈 1 -->
-			<fieldset class="fie1">
-				<fieldset>
-					<p>식물 키우는 것에 도전해 봤니?</P>
-
-				</fieldset>
-
-				<div class="cmd">
-					<ul>
-						<li>
-
-							<button id="answer1" type="submit" name="q_3"
-								class="btn btn-primary" value=1>응!! 아직도 키우는 중이야</button>
-
-						</li>
-						<li>
-							<button id="answer2" type="submit" name="q_3"
-								class="btn btn-primary" value=0>아니 한번도 키워보지 못했어</button>
-						</li>
-					</ul>
-				</div>
-
-			</fieldset>
+		
+		<!-- 추천 결과 -->
+		<div>
+		
+		
 		</div>
-
-
-
-
-
-
-
-
-
 
 		<!-- 하단 -->
 		<div id="copyright" class="container">

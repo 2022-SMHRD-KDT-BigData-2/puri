@@ -22,8 +22,8 @@
 		SELECT count(*) FROM member WHERE id = #{id}
 	</select>
 	
-	<insert id="q_anwerInsert" parameterType="kr.puri.entity.Q_Answer">
-      insert into question values(question_seq.nextval, #{question_1}, #{question_2}, #{question_3}, #{question_4}, #{question_5}, #{question_6}, #{question_7}, #{id})
+	<insert id="q_Insert" parameterType="kr.puri.entity.Question">
+      insert into question values(question_seq.nextval, #{q_1}, #{q_2}, #{q_3}, #{q_4}, #{q_5}, #{q_6}, #{q_7}, #{id})
    </insert>
 	
 

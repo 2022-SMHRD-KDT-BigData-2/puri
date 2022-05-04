@@ -28,7 +28,8 @@
 		<header class="top-bar">
 			<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
 				<h1 class="log">
-					<a href="<c:url value="/main.do"/>"><img src="./resources/images/logo555.png" alt="" /></a>
+					<a href="<c:url value="/main.do"/>"><img
+						src="./resources/images/logo555.png" alt="" /></a>
 				</h1>
 				<nav>
 					<ul class="menu">
@@ -45,8 +46,8 @@
 							} else {
 						%>
 						<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
-						<li><a href="#">병해충 판독</a></li>
-						<li><a href="#">커뮤니티</a></li>
+						<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
+						<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
 						<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
 						<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
 						</a></li>
@@ -60,32 +61,34 @@
 
 		<!-- 여기부터 추천 -->
 		<div id="center">
-		  <h1 class="topmenu">어떤 식물을 키울까요~?</h1>
-         
-         <!-- 퀴즈 1 -->
-         <fieldset class="fie1">
-            <fieldset>
-               <p>연인에게 꽃 선물을 받으면 어때?</P>
-               
-            </fieldset>
-        
-            <div class="cmd" >
-            <ul>
-            <li>
-            
-				<button id="answer1" type="submit" name="question_4" class="btn btn-primary"
-					value=1>좋아! 나는 꽃을 좋아하거든</button> 
-			
-			</li>
-          <li>
-				<button id="answer2" type="submit" name="question_4" class="btn btn-primary"
-					value=0>아니 꽃보다 다른 선물이면 좋겠어</button> 
-					</li>
+			<h1 class="topmenu">
+				<progress id="progress" value="41" min="0" max="100"></progress>
+			</h1>
+
+			<!-- 퀴즈 1 -->
+			<fieldset class="fie1">
+				<fieldset>
+					<p>연인에게 꽃 선물을 받으면 어때?</P>
+
+				</fieldset>
+
+				<div class="cmd">
+					<ul>
+						<li>
+
+							<button id="answer1" type="submit" name="q_4"
+								class="btn btn-primary" value=1>좋아! 나는 꽃을 좋아하거든</button>
+
+						</li>
+						<li>
+							<button id="answer2" type="submit" name="q_4"
+								class="btn btn-primary" value=0>아니 꽃보다 다른 선물이면 좋겠어</button>
+						</li>
 					</ul>
-			</div>
-			
-         </fieldset>
-        </div>
+				</div>
+
+			</fieldset>
+		</div>
 
 
 

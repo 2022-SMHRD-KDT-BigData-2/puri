@@ -16,6 +16,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
+<form action="${path}/goCommunity.do" method="get">
 	<nav id="navbar-example2" class="navbar navbar-light bg-light px-3">
 		<a class="navbar-brand" href="#">Navbar</a>
 		<ul class="nav nav-pills">
@@ -84,5 +85,7 @@
 				</div>
 			</div>
 		</div>
+		</div>
+		</form>
 </body>
 </html>

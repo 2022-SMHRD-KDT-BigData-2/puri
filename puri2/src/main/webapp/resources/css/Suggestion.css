@@ -24,18 +24,14 @@ div {
 }
 
 .topmenu {
-	height: 80px;
-	width: 1000px;
+	
 	margin-top: 100px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: 15px; border-bottom : 1px solid #0c7c14;
-	background-color: #0c7c14;
+	margin-right: 170px;
+	padding-top: 15px; 
 	text-align: center;
-	color: white;
 	line-height: 50px;
-	font-size: 40px;
-	border-bottom: 1px solid #0c7c14;
+	font-size: 30px;
+	
 }
 
 section {
@@ -56,6 +52,7 @@ p {
 }
 
 #answer1, #answer2 {
+	font-family:"SF_HailSnow";
 	width: 700px;
 	height: 50px;
 	font-size: 20px;
@@ -63,7 +60,7 @@ p {
 	background-color: white;
 	color: black;
 	padding-top: 10px;
-	padding-bottom: 40px;
+	padding-bottom: 10px;
 	margin-bottom: 60px;
 	border-radius: 40px;
 }
@@ -85,6 +82,8 @@ p {
 #progress::-webkit-progress-bar {
 	background: #e9f2d6;
 	border-radius: 10px;
+	width: 500px;
+	
 	/*box-shadow: inset 3px 3px 10px #ccc;*/
 }
 

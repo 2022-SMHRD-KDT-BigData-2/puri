@@ -69,23 +69,19 @@
 			<fieldset class="fie1">
 				<fieldset>
 					<p>내가 청소를 하는 이유는?</P>
-
+					<div id="q_img">
+						<img src="./resources/images/question2.png" />
+					</div>
 				</fieldset>
 
 				<div class="cmd">
-					<ul>
-						<li>
-
+				
 							<button id="answer1" type="submit" name="q_2"
 								class="btn btn-primary" value=1>집에서 애완동물의 털이 날려서</button>
 
-						</li>
-						<li>
 							<button id="answer2" type="submit" name="q_2"
 								class="btn btn-primary" value=0>깨끗한 집이 좋아서</button>
-						</li>
-
-					</ul>
+					
 				</div>
 
 			</fieldset>

@@ -39,7 +39,13 @@ public class SignupController {
       return "main";
    }
    
-
+  @PostMapping("/idCheck.do")
+  @ResponseBody
+  public int idCheck(@RequestParam("id") String id){
+      int cnt = puriMapper.idCheck(id);
+      return cnt;
+	  
+  }
    
    
 }

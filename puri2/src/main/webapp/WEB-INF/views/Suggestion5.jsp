@@ -68,23 +68,21 @@
 			<!-- 퀴즈 1 -->
 			<fieldset class="fie1">
 				<fieldset>
-					<p>집들이 선물로 받고 싶은것은??</P>
-
+					<p>집들이 선물로 받고 싶은것은?</P>
+					<div id="q_img">
+						<img src="./resources/images/question5.png" />
+					</div>
 				</fieldset>
 
 				<div class="cmd">
-					<ul>
-						<li>
 
-							<button id="answer1" type="submit" name="q_5"
-								class="btn btn-primary" value=1>크고 화려한 것</button>
 
-						</li>
-						<li>
-							<button id="answer2" type="submit" name="q_5"
-								class="btn btn-primary" value=0>작고 아담한것</button>
-						</li>
-					</ul>
+					<button id="answer1" type="submit" name="q_5"
+						class="btn btn-primary" value=1>크고 화려한 것</button>
+
+					<button id="answer2" type="submit" name="q_5"
+						class="btn btn-primary" value=0>작고 아담한것</button>
+
 				</div>
 
 			</fieldset>

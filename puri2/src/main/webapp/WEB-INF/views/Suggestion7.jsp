@@ -69,22 +69,19 @@
 			<fieldset class="fie1">
 				<fieldset>
 					<p>난 운명을</P>
-
+					<div id="q_img">
+						<img src="./resources/images/question7.png" />
+					</div>
 				</fieldset>
 
 				<div class="cmd">
-					<ul>
-						<li>
 
-							<button id="answer1" type="submit" name="q_7"
-								class="btn btn-primary" value=1>믿는 편이다.</button>
+					<button id="answer1" type="submit" name="q_7"
+						class="btn btn-primary" value=1>믿는 편이다.</button>
 
-						</li>
-						<li>
-							<button id="answer2" type="submit" name="q_7"
-								class="btn btn-primary" value=0>믿지 않는 편이다.</button>
-						</li>
-					</ul>
+					<button id="answer2" type="submit" name="q_7"
+						class="btn btn-primary" value=0>믿지 않는 편이다.</button>
+
 				</div>
 
 			</fieldset>

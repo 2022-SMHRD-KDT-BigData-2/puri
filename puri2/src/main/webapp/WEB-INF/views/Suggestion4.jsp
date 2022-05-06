@@ -69,22 +69,19 @@
 			<fieldset class="fie1">
 				<fieldset>
 					<p>연인에게 꽃 선물을 받으면 어때?</P>
-
+					<div id="q_img">
+						<img src="./resources/images/question4.png" />
+					</div>
 				</fieldset>
 
 				<div class="cmd">
-					<ul>
-						<li>
 
-							<button id="answer1" type="submit" name="q_4"
-								class="btn btn-primary" value=1>좋아! 나는 꽃을 좋아하거든</button>
+					<button id="answer1" type="submit" name="q_4"
+						class="btn btn-primary" value=1>좋아! 나는 꽃을 좋아하거든</button>
 
-						</li>
-						<li>
-							<button id="answer2" type="submit" name="q_4"
-								class="btn btn-primary" value=0>아니 꽃보다 다른 선물이면 좋겠어</button>
-						</li>
-					</ul>
+					<button id="answer2" type="submit" name="q_4"
+						class="btn btn-primary" value=0>아니 꽃보다 다른 선물이면 좋겠어</button>
+
 				</div>
 
 			</fieldset>

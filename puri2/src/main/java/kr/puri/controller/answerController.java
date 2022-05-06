@@ -22,7 +22,7 @@ public class answerController {
 	@Autowired
 	   private PuriMapper puriMapper;
 	  
-	@GetMapping("/Suggestion.do")
+	@GetMapping("/goSuggestion.do")
 	   public String answer1(HttpServletRequest request) {
 		  
 		  return "Suggestion";

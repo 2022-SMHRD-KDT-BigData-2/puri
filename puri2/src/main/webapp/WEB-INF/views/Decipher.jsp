@@ -13,7 +13,99 @@
 
 <head>
 <style type="text/css">
+.image-upload {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    cursor: pointer;
+    font-size: 1em;
+}
+
+#chooseFile {
+    visibility: hidden;
+}
+
+.fileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fileInput {
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px black;
+    width: 60%;
+    height: 30px;
+}
+
+#fileName {
+    margin-left: 5px;
+}
+
+.buttonContainer {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 0.8em;
+
+    cursor: pointer;
+}
+
+.image-show {
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.img {
+    position: absolute;
+}
 </style>
+<script type="text/javascript">
+function loadFile(input) {
+    var file = input.files[0];	//선택된 파일 가져오기
+
+    //미리 만들어 놓은 div에 text(파일 이름) 추가
+    var name = document.getElementById('fileName');
+    name.textContent = file.name;
+
+  	//새로운 이미지 div 추가
+    var newImage = document.createElement("img");
+    newImage.setAttribute("class", 'img');
+
+    //이미지 source 가져오기
+    newImage.src = URL.createObjectURL(file);   
+
+    newImage.style.width = "70%";
+    newImage.style.height = "70%";
+   // newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지를 숨긴다
+    newImage.style.objectFit = "contain";
+
+    //이미지를 image-show div에 추가
+    var container = document.getElementById('image-show');
+    container.appendChild(newImage);
+};
+</script>
 <title>Puri</title>
 </head>
 
@@ -34,9 +126,7 @@
 				<ul class="menu">
 					<%
 						if (vo == null) {
-					%>
-					<!-- <li><a id="popup_layer"
-	                           href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
+					%>				
 					<li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
 					<li style="margin-right: 10em"><a
 						href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
@@ -58,13 +148,28 @@
 
 	<!-- 이미지 업로드 -->
 	<h1>파일 업로드</h1>
-	<form action="${contextPath }/upload.do" method="post" enctype="multipart/form-data">	
-		<input type="file" name="file"><br> 
-		<input type="submit" name="업로드"><br>
+	    <div class="image-show" id="image-show"></div>
+	   <div class="container">
+        <div class="image-upload" id="image-upload">
+	<form action="${path}/upload.do" method="post" enctype="multipart/form-data">	
+	   <div class="button">
+        	<label for="chooseFile"> 👉 CLICK HERE! 👈 </label>
+   	 	</div>
+		<input type="file" id="chooseFile" name="file" accept="image/*" onchange="loadFile(this)"><br> 
+		 <div class="fileContainer">
+                <div class="fileInput">
+                    <p>FILE NAME: </p>
+                    <p id="fileName"></p>
+                </div>
+                <div class="buttonContainer">
+                    <input type="submit" class="submitButton" id="submitButton" value="SUBMIT">              
+                </div>
+            </div>
 	</form>
-	<hr>
-	<a href="${path}/views">파일보기</a>
-
+	</div>
+        
+        
+    </div>
 
 	<!-- 하단 -->
 	<div id="copyright" class="container">
@@ -83,9 +188,7 @@
 			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 		</ul>
 	</div>
-	</div>
 
-	</div>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -94,6 +197,5 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	</form>
 </body>
 </html>

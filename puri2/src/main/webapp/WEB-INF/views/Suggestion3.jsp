@@ -68,23 +68,20 @@
 			<!-- 퀴즈 1 -->
 			<fieldset class="fie1">
 				<fieldset>
-					<p>식물 키우는 것에 도전해 봤니?</P>
-
+					<p>식물 키우는 것에 도전해 봤어?</P>
+					<div id="q_img">
+						<img src="./resources/images/question3.png" />
+					</div>
 				</fieldset>
 
 				<div class="cmd">
-					<ul>
-						<li>
 
-							<button id="answer1" type="submit" name="q_3"
-								class="btn btn-primary" value=1>응!! 아직도 키우는 중이야</button>
+					<button id="answer1" type="submit" name="q_3"
+						class="btn btn-primary" value=1>응!! 아직도 키우는 중이야</button>
 
-						</li>
-						<li>
-							<button id="answer2" type="submit" name="q_3"
-								class="btn btn-primary" value=0>아니 한번도 키워보지 못했어</button>
-						</li>
-					</ul>
+					<button id="answer2" type="submit" name="q_3"
+						class="btn btn-primary" value=0>아니 한번도 키워보지 못했어</button>
+
 				</div>
 
 			</fieldset>

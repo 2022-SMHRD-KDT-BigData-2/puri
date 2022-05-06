@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 
 
 import kr.puri.entity.Member;
+import kr.puri.entity.Plant;
 import kr.puri.entity.Question;
 
 @Mapper
@@ -15,12 +16,14 @@ public interface PuriMapper {
 
 	public Member Login(Member vo);
 
-	public List<Member> memberList();
-	
-	public String idCheck(String id);
+	public int idCheck(String id);
 
 	public void q_Insert(Question qvo);
 
-	
+	public List<Plant> plantList();
+
+	public List<Member> memberList();
+
+	public void stord_img(String stored_img);
 
 }

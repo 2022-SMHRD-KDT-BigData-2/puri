@@ -18,13 +18,22 @@
 		select * from Member
 	</select>
 
-	<select id="idCheck" parameterType="kr.puri.entity.Member" resultType="String">
-		SELECT count(*) FROM member WHERE id = #{id}
+	<select id="idCheck" parameterType="kr.puri.entity.Member"
+		resultType="String">
+		select * from member where id = #{id}
 	</select>
-	
+
 	<insert id="q_Insert" parameterType="kr.puri.entity.Question">
-      insert into question values(question_seq.nextval, #{q_1}, #{q_2}, #{q_3}, #{q_4}, #{q_5}, #{q_6}, #{q_7}, #{id})
-   </insert>
-	
+		insert into question values(question_seq.nextval, #{q_1}, #{q_2}, #{q_3},
+		#{q_4}, #{q_5}, #{q_6}, #{q_7}, #{id})
+	</insert>
+
+	<select id="plantList" parameterType="kr.puri.entity.Plant">
+		select
+	</select>
+
+	<insert id="stord_img" parameterType="String">
+		insert into disease_img values(img_seq.nextval, #{stored_img})
+	</insert>
 
 </mapper>

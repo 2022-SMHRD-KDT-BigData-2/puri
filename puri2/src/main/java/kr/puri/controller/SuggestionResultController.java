@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.puri.entity.Member;
+import kr.puri.entity.Plant;
 import kr.puri.mapper.PuriMapper;
 
 public class SuggestionResultController {
@@ -14,8 +15,8 @@ public class SuggestionResultController {
 	   private PuriMapper puriMapper;
 
 	   @RequestMapping("/goSuggestionResult.do")
-	   public String boardList(Model model) {
-	      List<Member> list = puriMapper.memberList();
+	   public String plantList(Model model) {
+	      List<Plant> list = puriMapper.plantList();
 
 	      // 객체 바인딩 → View
 	      model.addAttribute("list", list);

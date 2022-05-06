@@ -69,22 +69,19 @@
 			<fieldset class="fie1">
 				<fieldset>
 					<p>집 안의 맑은 공기를 위해 선택한 방법은?</P>
-
+					<div id="q_img">
+						<img src="./resources/images/question6.png" />
+					</div>
 				</fieldset>
 
 				<div class="cmd">
-					<ul>
-						<li>
 
-							<button id="answer1" type="submit" name="q_6"
-								class="btn btn-primary" value=1>돈이 최고,, 공기청정기!</button>
+					<button id="answer1" type="submit" name="q_6"
+						class="btn btn-primary" value=1>돈이 최고,, 공기청정기!</button>
 
-						</li>
-						<li>
-							<button id="answer2" type="submit" name="q_6"
-								class="btn btn-primary" value=0>나랑 같이 살아가는 반려식물!</button>
-						</li>
-					</ul>
+					<button id="answer2" type="submit" name="q_6"
+						class="btn btn-primary" value=0>나랑 같이 살아가는 반려식물!</button>
+
 				</div>
 
 			</fieldset>

@@ -165,8 +165,6 @@
 							type : "post",
 						    dataType : "json",
 							data : {"id" : id},
-						/* 	dataType : "json",
-							data : JSON.stringify(form), */
 							success:function(data){
 								if(data == 'true'){							
 									$('#result').html('사용 가능한 아이디 입니다');

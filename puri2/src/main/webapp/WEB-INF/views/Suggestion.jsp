@@ -69,25 +69,25 @@
 			<!-- 퀴즈 1 -->
 			<fieldset class="fie1">
 				<fieldset>
-					<p>집에 오면 제일 먼저 뭐부터 했지?</P>
-
+					<p>집에 오면 제일 먼저 뭐부터 했어?</P>
+					<div id="q_img" >
+						<img src="./resources/images/question1.png" />
+					</div>
+					
 				</fieldset>
 
 				<div class="cmd">
-					<ul>
-						<li>
+					
 
 							<button id="answer1" type="submit" name="q_1"
 								class="btn btn-primary" value=1>어.. 당연히 옷 벗기도 전에 침대에
 								누웠죠..</button>
 
-						</li>
-						<li>
+						
 							<button id="answer2" type="submit" name="q_1"
 								class="btn btn-primary" value=0>음.. 우선 씻고 나와서 할 일부터
 								했는데요.</button>
-						</li>
-					</ul>
+					
 				</div>
 
 			</fieldset>

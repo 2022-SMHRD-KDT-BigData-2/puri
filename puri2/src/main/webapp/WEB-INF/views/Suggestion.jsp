@@ -5,8 +5,8 @@
 	language="java"%>
 
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<script src="${path}/resources/js/test.js"></script>
-<link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="${path}/resources/js/bootstrap.js">
+<link href="${path}/resources/js/bootstrap.min.js">
 <link href="${path}/resources/css/main3.css" rel="stylesheet" />
 <link href="${path}/resources/css/Suggestion.css" rel="stylesheet" />
 <html>
@@ -77,13 +77,9 @@
 				</fieldset>
 
 				<div class="cmd">
-					
-
 							<button id="answer1" type="submit" name="q_1"
 								class="btn btn-primary" value=1>어.. 당연히 옷 벗기도 전에 침대에
 								누웠죠..</button>
-
-						
 							<button id="answer2" type="submit" name="q_1"
 								class="btn btn-primary" value=0>음.. 우선 씻고 나와서 할 일부터
 								했는데요.</button>
@@ -110,17 +106,6 @@
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 			</ul>
 		</div>
-		</div>
-
-		</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
 	</form>
 </body>
 </html>

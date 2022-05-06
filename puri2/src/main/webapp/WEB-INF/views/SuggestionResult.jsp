@@ -6,18 +6,14 @@
 	rel="stylesheet" id="bootstrap-css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="${cpath}/resources/js/bootstrap.js">
+<link href="${cpath}/resources/js/bootstrap.min.js">
 <link href="${cpath}/resources/css/main3.css" rel="stylesheet" />
 <link href="${cpath}/resources/css/SuggestionResult.css"
 	rel="stylesheet" />
-<link href="${cpath}/resources/css/font-awesome.min.css"
-	rel="stylesheet">
+
 <html>
 <meta charset="EUC-KR">
 
@@ -83,4 +79,5 @@
 				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 			</ul>
 		</div>
+	</form>
 </body>

@@ -1,13 +1,13 @@
+<%@page import="kr.puri.entity.Board"%>
 <%@page import="kr.puri.entity.Member"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
    language="java"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<script src="${path}/resources/js/test.js"></script>
-<link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="${path}/resources/js/bootstrap.js">
+<link href="${path}/resources/js/bootstrap.min.js">
 <link href="${path}/resources/css/Community.css" rel="stylesheet" />
-
 
 <html>
 <meta charset="EUC-KR">
@@ -20,14 +20,14 @@
 
 <body class="homepage is-preload">
    <%
-      HttpSession session = request.getSession();
+   HttpSession session = request.getSession();
    Member vo = (Member) session.getAttribute("vo");
-   out.print(vo);
+   
    %>
 
    <!-- 상단메뉴 -->
    <header class="top-bar">
-      <div class="col-lg-12 col-md-12 coml-sm-12 col-xs-12">
+      <div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
          <h1 class="log">
             <a href="<c:url value="/main.do"/>"> <img
                src="./resources/images/logo555.png" alt="" /></a>
@@ -61,8 +61,8 @@
 
    </header>
    <!-- 게시글 -->
+   
    <div class="wrapper">
-   <div class="col-lg-12 col-md-12 coml-sm-4 col-xs-4">
    <div class="gala">
       <table class="teables">
          <tr>
@@ -71,7 +71,7 @@
             <th class="sizemin">작성자</th>
          </tr>
          <tr>
-            <td class="sizemin">제목</td>
+            <td class="sizemin">번호</td>
             <td>내용</td>
             <td class="sizemin"><%=vo.getNick() %></td>
          </tr>
@@ -82,6 +82,8 @@
          </tr>
       </table>
    </div>
+   <button class="btnb" id="ibutton"><a href="<c:url value="/goBoardInsert.do"/>">글쓰기 </a></button> 
+   
    <!-- 페이지 버튼 -->
    <div class="paging">
       <a href="#">이전</a>
@@ -92,7 +94,6 @@
       <a href="#">다음</a>
    </div>
    </div>
-   </div>
    
    <div id="copyright" class="container">
       <ul class="menu">
@@ -100,13 +101,8 @@
          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
       </ul>
    </div>
-   <!-- Scripts -->
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.dropotron.min.js"></script>
-   <script src="assets/js/browser.min.js"></script>
-   <script src="assets/js/breakpoints.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <script src="assets/js/main.js"></script>
+ 
 
 </body>
+
 </html>

@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-
+import kr.puri.entity.Board;
 import kr.puri.entity.Member;
 import kr.puri.entity.Plant;
 import kr.puri.entity.Question;
@@ -16,8 +16,6 @@ public interface PuriMapper {
 
 	public Member Login(Member vo);
 
-	public int idCheck(String id);
-
 	public void q_Insert(Question qvo);
 
 	public List<Plant> plantList();
@@ -25,5 +23,10 @@ public interface PuriMapper {
 	public List<Member> memberList();
 
 	public void stord_img(String stored_img);
-
+	
+	public Member nickCheck(String nick);
+	
+	public Member idCheck(String id);
+	
+	public void boardInsert(Board bvo);
 }

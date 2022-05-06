@@ -11,6 +11,14 @@
    font-weight: normal;
    font-style: normal;
 }
+/*글쓰기 버튼*/
+.btnb{
+	text-align: right;
+}
+.btnb a:hover{
+	color: #008040;
+    border-bottom-color: rgba(255, 255, 255, 0);
+}
 /*페이지 버튼*/
 .paging{
    margin-top: 3px;
@@ -33,7 +41,6 @@
    overflow: hidden;
    /*영역 밖으로 튀어나온 오브젝트는 숨긴다.*/
 }
-/*움직이는 배너*/
 
 /* 여기까지 */
 nav {

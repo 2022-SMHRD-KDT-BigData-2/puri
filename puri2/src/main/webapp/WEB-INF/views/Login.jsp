@@ -15,6 +15,8 @@
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
    crossorigin="anonymous">
    <link href="${cpath}/resources/css/login.css" rel="stylesheet" />
+<link href="${cpath}/resources/js/bootstrap.js">
+<link href="${cpath}/resources/js/bootstrap.min.js">
 <style type="text/css">
 
 </style>

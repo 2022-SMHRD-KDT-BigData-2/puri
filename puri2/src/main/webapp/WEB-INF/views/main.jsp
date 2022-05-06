@@ -3,10 +3,13 @@
 <%@ page session="false"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
-<c:set var="path" value="${pageContext.request.contextPath}" />
-<script src="${path}/resources/js/test.js"></script>
-<link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
-<link href="${path}/resources/css/main3.css" rel="stylesheet" />
+<c:set var="cpath" value="${pageContext.request.contextPath}" />
+<!--  <script
+   src="//maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+
+<link href="${cpath}/resources/js/bootstrap.js">
+<link href="${cpath}/resources/js/bootstrap.min.js">
+<link href="${cpath}/resources/css/main3.css" rel="stylesheet" />
 <html>
 <meta charset="EUC-KR">
 
@@ -27,7 +30,7 @@
 	<!-- Header -->
 	<!-- 영상 -->
 	<div class="imges">
-		<div>
+		<div class="col-xs-12">
 			<!-- id="header-wrapper" -->
 			<video muted autoplay loop src="./resources/videos/Plant.mp4"></video>
 		</div>
@@ -36,12 +39,12 @@
 	<!-- 상단메뉴 -->
 	<header class="top-bar">
 		<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
-			<h1 class="log">
+			<h1 class="log col-xs-6"">
 				<a href="<c:url value="/main.do"/>"> <img
 					src="./resources/images/logo555.png" alt="" /></a>
 			</h1>
 			<nav>
-				<ul class="menu">
+				<ul class="menu col-xs-6">
 					<%
 						if (vo == null) {
 					%>
@@ -58,7 +61,7 @@
 					<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
 					<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
 					<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
-					<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
+					<li style="margin-right: 10em"><a href="${cpath}/logout.do">로그아웃
 					</a></li>
 					<%
 						}
@@ -203,94 +206,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- Promo -
-            <div id="promo-wrapper">
-               <section id="promo">
-                  <h2>Neque semper magna et lorem ipsum adipiscing</h2>
-                  <a href="#" class="button">Breach the thresholds</a>
-               </section>
-            </div>->
-
-         <!-- Features 2 -->
-	<!--  <div class="wrapper">
-      <section class="container">
-         <header class="major">
-            <h2>Sed magna consequat lorem curabitur tempus</h2>
-            <p>Elit aliquam vulputate egestas euismod nunc semper vehicula
-               lorem blandit</p>
-         </header>
-         <div class="row features">
-            <section class="col-4 col-12-narrower feature">
-               <div class="image-wrapper first">
-                  <a href="#" class="image featured"><img
-                     src="./resources/images/pic03.jpg" alt="" /></a>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur et sed adipiscing
-                  elit. Curabitur vel sem sit dolor neque semper magna lorem ipsum.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-               <div class="image-wrapper">
-                  <a href="#" class="image featured"><img
-                     src="./resources/images/pic04.jpg" alt="" /></a>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur et sed adipiscing
-                  elit. Curabitur vel sem sit dolor neque semper magna lorem ipsum.</p>
-            </section>
-            <section class="col-4 col-12-narrower feature">
-               <div class="image-wrapper">
-                  <a href="#" class="image featured"><img
-                     src="./resources/images/pic05.jpg" alt="" /></a>
-               </div>
-               <p>Lorem ipsum dolor sit amet consectetur et sed adipiscing
-                  elit. Curabitur vel sem sit dolor neque semper magna lorem ipsum.</p>
-            </section>
-         </div>
-      </section>
-   </div>-->
-
-	<!-- Footer -->
-	<!--  <div id="footer-wrapper">-->
-	<!--  <div id="footer" class="container">-->
-
-	<!--  <div class="row">-->
-	<!--  <section class="col-6 col-12-narrower">
-                        <form method="post" action="#">
-                           <div class="row gtr-50">
-                              <div class="col-6 col-12-mobile">
-                                 <input name="name" placeholder="Name" type="text" />
-                              </div>
-                              <div class="col-6 col-12-mobile">
-                                 <input name="email" placeholder="Email" type="text" />
-                              </div>
-                              <div class="col-12">
-                                 <textarea name="message" placeholder="Message"></textarea>
-                              </div>
-                              <div class="col-12">
-                                 <ul class="actions">
-                                    <li><input type="submit" value="Send Message" /></li>
-                                    <li><input type="reset" value="Clear form" /></li>
-                                 </ul>
-                              </div>
-                           </div>
-                        </form>
-                     </section>-->
-	<!--  <section class="col-6 col-12-narrower">
-                        <div class="row gtr-0">
-                           <ul class="divided icons col-6 col-12-mobile">
-                              <li class="icon brands fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
-                              <li class="icon brands fa-facebook-f"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
-                              <li class="icon brands fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
-                           </ul>
-                           <ul class="divided icons col-6 col-12-mobile">
-                              <li class="icon brands fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
-                              <li class="icon brands fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
-                              <li class="icon brands fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
-                           </ul>
-                        </div>
-                     </section>-->
-	<!--  </div>-->
-	<!--  </div>-->
 	<div id="copyright" class="container">
 		<!--   <ul class="menu">
          <li class="icon brands fa-twitter"><a href="#"><span
@@ -307,17 +222,7 @@
 			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 		</ul>
 	</div>
-	</div>
 
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
 
 </body>
 </html>

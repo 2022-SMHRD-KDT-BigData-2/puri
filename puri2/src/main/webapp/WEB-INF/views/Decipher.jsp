@@ -4,8 +4,8 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
 	language="java"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<script src="${path}/resources/js/test.js"></script>
-<link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="${path}/resources/js/bootstrap.js">
+<link href="${path}/resources/js/bootstrap.min.js">
 <link href="${path}/resources/css/main3.css" rel="stylesheet" />
 <link href="${path}/resources/css/Suggestion.css" rel="stylesheet" />
 <html>
@@ -188,14 +188,5 @@ function loadFile(input) {
 			<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 		</ul>
 	</div>
-
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
 </body>
 </html>

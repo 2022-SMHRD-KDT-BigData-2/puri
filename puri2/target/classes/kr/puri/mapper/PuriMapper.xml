@@ -18,14 +18,11 @@
 		select * from Member
 	</select>
 
-	<select id="idCheck" parameterType="kr.puri.entity.Member"
-		resultType="String">
-		select * from member where id = #{id}
-	</select>
-
 	<insert id="q_Insert" parameterType="kr.puri.entity.Question">
-		insert into question values(question_seq.nextval, #{q_1}, #{q_2}, #{q_3},
-		#{q_4}, #{q_5}, #{q_6}, #{q_7}, #{id})
+		insert into question
+		values(question_seq.nextval, #{q_1}, #{q_2}, #{q_3},
+		#{q_4}, #{q_5},
+		#{q_6}, #{q_7}, #{id})
 	</insert>
 
 	<select id="plantList" parameterType="kr.puri.entity.Plant">
@@ -33,7 +30,22 @@
 	</select>
 
 	<insert id="stord_img" parameterType="String">
-		insert into disease_img values(img_seq.nextval, #{stored_img})
+		insert into disease_img
+		values(img_seq.nextval, #{stored_img})
 	</insert>
 
+
+	<select id="idCheck" parameterType="String"
+		resultType="kr.puri.entity.Member">
+		select * from member where id = #{id}
+	</select>
+
+	<select id="nickCheck" parameterType="String"
+		resultType="kr.puri.entity.Member">
+		select * from member where nick = #{nick}
+	</select>
+	
+	<insert id="boardInsert" parameterType="kr.puri.entity.Board">
+ 	 insert into write values(write_seq.nextval,#{write_title},#{write_content},#{id},#{write_img})
+	</insert>
 </mapper>

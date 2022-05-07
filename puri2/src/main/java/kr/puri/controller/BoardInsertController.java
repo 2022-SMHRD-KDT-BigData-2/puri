@@ -4,6 +4,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -24,24 +25,31 @@ import kr.puri.mapper.PuriMapper;
 
 @Controller
 public class BoardInsertController {
-	
-	@Autowired
-	private PuriMapper puriMapper;
-	
-	@GetMapping("/goBoardInsert.do")
-	   public String goMypage(Member vo) {
-	      return "BoardInsert";
-	   }
-	
-	
-	@PostMapping("/BoardInsert2.do") 
-	public String boardUpload(@RequestParam("file") MultipartFile file, HttpServletRequest request,String write_title,String write_content,Board bvo){
-		System.out.println("파일 이름 : " + file.getOriginalFilename());
-		HttpSession session =request.getSession();
-		Member vo = (Member)session.getAttribute("vo");
-		String id = vo.getId();
+   
+   @Autowired
+   private PuriMapper puriMapper;
+   
+   @GetMapping("/goBoardInsert.do")
+      public String goMypage(Member vo) {
+         return "BoardInsert";
+      }
+   
+   
+   @PostMapping("/BoardInsert2.do") 
+   public String boardUpload(@RequestParam("file") MultipartFile file, HttpServletRequest request,String write_title,String write_content,Board bvo){
+      System.out.println("파일 이름 : " + file.getOriginalFilename());
+      HttpSession session =request.getSession();
+      Member vo = (Member)session.getAttribute("vo");
+      String id = vo.getId();      
+      
+       String path="/resources/images";
+
+         ServletContext context= request.getSession().getServletContext();
+
+         String realPath=context.getRealPath(path);
+         
         try (              
-                FileOutputStream fos = new FileOutputStream("C:\\Users\\SM016\\img\\" + file.getOriginalFilename());
+                FileOutputStream fos = new FileOutputStream(realPath+"\\" + file.getOriginalFilename());
                 // 파일 저장할 경로 + 파일명을 파라미터로 넣고 fileOutputStream 객체 생성하고
                 InputStream is = file.getInputStream();) {
                 // file로 부터 inputStream을 가져온다.
@@ -57,9 +65,11 @@ public class BoardInsertController {
                 fos.write(buffer, 0, readCount);
                 // 위에서 생성한 fileOutputStream 객체에 출력하기를 반복한다
             }
-            String write_img = "C:\\Users\\SM016\\img\\" + file.getOriginalFilename();
+           
             
-            
+            //String write_img = "C:\\Users\\SM016\\img\\" + file.getOriginalFilename();
+            String write_img =file.getOriginalFilename();
+                   
             bvo = new Board(write_title,write_content,id,write_img);
             
             puriMapper.boardInsert(bvo);
@@ -67,9 +77,12 @@ public class BoardInsertController {
             
             
         } catch (Exception ex) {
-            throw new RuntimeException("file Save Error");
+           
+            //throw new RuntimeException("file Save Error");
+            bvo = new Board(write_title,write_content,id,"");             
+             puriMapper.boardInsert(bvo);
+             
         }
-		return "redirect:/main.do";
-	}
-
+      return "redirect:/goCommunity.do";
+   }
 }

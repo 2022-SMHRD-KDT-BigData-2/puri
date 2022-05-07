@@ -35,7 +35,7 @@ public class loginController {
          session.setAttribute("vo", theVo);   
       }
       else {
-      return "redirect:/loginout.do";   
+      return "redirect:/goLogin.do";   
       }
       return "redirect:/main.do";
    }

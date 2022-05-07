@@ -1,3 +1,4 @@
+<%@page import="kr.puri.entity.Plant"%>
 <%@page import="kr.puri.entity.Member"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
@@ -10,7 +11,6 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <link href="${cpath}/resources/js/bootstrap.js">
 <link href="${cpath}/resources/js/bootstrap.min.js">
-<link href="${cpath}/resources/css/main3.css" rel="stylesheet" />
 <link href="${cpath}/resources/css/SuggestionResult.css"
 	rel="stylesheet" />
 
@@ -27,9 +27,8 @@
 	<%
 		HttpSession session = request.getSession();
 	Member vo = (Member) session.getAttribute("vo");
-	out.print(vo);
 	%>
-	<form action="${path}/SuggestionResult.do" method="post">
+	<form action="${path}/goSuggestionResult.do" method="post">
 		<header class="top-bar">
 
 			<h1 class="log">
@@ -62,22 +61,65 @@
 		</header>
 
 		<!-- 추천 결과 -->
-		<div class="S_result">식물 분류
-			이름
-			이미지
-			정보
-		
-		
-		</div>
+		<div class="container" id="vooo">
+			<div class="card">
+				<div class="container-fliud">
+					<div class="wrapper row">
+						<!-- 이미지 -->
+						<c:forEach var="qvo" items="${list}">
+							<div class="preview col-md-4">
+								<h2
+									style="padding-bottom: 1em; display: inline; margin-right: 0.5em;">${qvo.plant_name }</h2>
+								<span>${qvo.plant_group }</span>
+								<p>${qvo.plant_mean }</p>
+								<img class="plantsize" src="${qvo.plant_img }">
+								
+								<table class="table">
+									<tr>
+										<td class="font_color">난이도</td>
+										
+										<td>${qvo.plant_level }</td>
+									</tr>
+									<tr>
+										<td class="font_color">꽃 유무</td>
+										<td>${qvo.plant_flower }</td>
+									</tr>
 
-	
+									<tr>
+										<td class="font_color">사이즈</td>
+										<td>${qvo.plant_size }</td>
+									</tr>
+									<tr>
+										<td class="font_color">물 주기</td>
+										<td>${qvo.plant_water }일</td>
+									</tr>
+									<tr>
+										<td class="font_color">빛</td>
+										<td>${qvo.plant_sun }</td>
+									</tr>
+									<tr>
+										<td class="font_color">특징</td>
+										<td>${qvo.plant_feature }</td>
+									</tr>
+									
+								</table>
 
-		<!-- 하단 -->
-		<div id="copyright" class="container">
-			<ul class="menu">
-				<li>&copy; Untitled. All rights reserved.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
+
+
+							</div>
+						</c:forEach>
+
+					</div>
+					</d
+								iv>
+				</div>
+			</div>
+			<!-- 하단 -->
+			<div id="copyright" class="container">
+				<ul class="menu">
+					<li>&copy; Untitled. All rights reserved.</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
 	</form>
 </body>

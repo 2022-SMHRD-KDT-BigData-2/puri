@@ -13,11 +13,18 @@
 }
 /*글쓰기 버튼*/
 .btnb{
-	text-align: right;
+   margin-top: 3px;
+   text-align: right;
+}
+.btnb a{
+   border: 1px solid #ccc;
+   padding: 10px;
+   border-radius: 3px;
+   
 }
 .btnb a:hover{
-	color: #008040;
-    border-bottom-color: rgba(255, 255, 255, 0);
+   color: #008040;
+   border-color: rgb(19 170 11/ 50%);
 }
 /*페이지 버튼*/
 .paging{
@@ -31,8 +38,9 @@
    
 }
 .paging a:hover{
-   background-color:#e6efd2;
-   border-bottom: none;!important
+   color : #008040;
+    border-color: rgb(19 170 11/ 50%);
+    border-bottom: none;!important
    
 }
 
@@ -1785,8 +1793,9 @@ input[type="button"], input[type="submit"], input[type="reset"], button,
 
 input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hover,
    button:hover, .button:hover {
-   color: #f35858;
-   border-color: rgba(243, 88, 88, 0.5);
+   color: #008040;
+   border: solid 1px #008040;
+   border-color: rgb(19 170 11/ 50%);
 }
 
 /* Icons */

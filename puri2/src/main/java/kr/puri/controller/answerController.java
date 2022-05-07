@@ -106,7 +106,7 @@ public class answerController {
 		  
 		  puriMapper.q_Insert(qvo);
 		  
-		  return "SuggestionResult";
+		  return "redirect:/goSuggestionResult.do";
 	   }
 
 	  

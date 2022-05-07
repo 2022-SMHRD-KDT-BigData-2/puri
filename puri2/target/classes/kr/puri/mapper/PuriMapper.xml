@@ -25,8 +25,12 @@
 		#{q_6}, #{q_7}, #{id})
 	</insert>
 
-	<select id="plantList" parameterType="kr.puri.entity.Plant">
-		select
+	<select id="plantList" parameterType="String"
+		resultType="kr.puri.entity.Plant">
+		select plant_name, plant_group, plant_level, plant_flower, plant_size, plant_water, plant_sun, plant_temp, plant_feature, plant_mean, plant_img
+		from plant , (select a.plant_name1, a.plant_name2, a.plant_name3 from (SELECT * FROM (SELECT *FROM QUESTION where id=#{id} ORDER BY question_seq DESC) WHERE ROWNUM= 1) q, q_answer a
+		where q.a_1=a.a_1 and q.a_2=a.a_2 and q.a_3=a.a_3 and q.a_4=a.a_4 and q.a_5=a.a_5 and q.a_6=a.a_6 and q.a_7=a.a_7) a
+		where plant_name = a.plant_name1 or plant_name = a.plant_name2 or plant_name = a.plant_name3
 	</select>
 
 	<insert id="stord_img" parameterType="String">
@@ -44,8 +48,13 @@
 		resultType="kr.puri.entity.Member">
 		select * from member where nick = #{nick}
 	</select>
-	
+
 	<insert id="boardInsert" parameterType="kr.puri.entity.Board">
- 	 insert into write values(write_seq.nextval,#{write_title},#{write_content},#{id},#{write_img})
+		insert into write
+		values(write_seq.nextval,#{write_title},#{write_content},#{id},#{write_img})
 	</insert>
+	
+	<select id="boardList" resultType="kr.puri.entity.Board" parameterType="kr.puri.entity.Board">
+      select * from write
+   </select>
 </mapper>

@@ -34,7 +34,7 @@ public class DicipherController {
 	public String upload(@RequestParam("file") MultipartFile file){
 		System.out.println("파일 이름 : " + file.getOriginalFilename());
         try (              
-                FileOutputStream fos = new FileOutputStream("C:\\Users\\SM21\\img\\" + file.getOriginalFilename());
+                FileOutputStream fos = new FileOutputStream("C:\\Users\\smhrd\\img" + file.getOriginalFilename());
                 // 파일 저장할 경로 + 파일명을 파라미터로 넣고 fileOutputStream 객체 생성하고
                 InputStream is = file.getInputStream();) {
                 // file로 부터 inputStream을 가져온다.
@@ -51,7 +51,7 @@ public class DicipherController {
                 // 위에서 생성한 fileOutputStream 객체에 출력하기를 반복한다
             }
             
-            String stored_img = "C:\\Users\\SM21\\img\\" + file.getOriginalFilename();
+            String stored_img = "C:\\Users\\smhrd\\img" + file.getOriginalFilename();
             puriMapper.stord_img(stored_img);
             
         } catch (Exception ex) {

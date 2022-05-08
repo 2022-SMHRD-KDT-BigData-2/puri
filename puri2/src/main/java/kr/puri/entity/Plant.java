@@ -15,6 +15,7 @@ public class Plant {
 	String plant_img;
 	
 	public Plant() {}
+	
 	public Plant(int plant_seq, String plant_group, String plant_name, String plant_level, String plant_flower,
 			String plant_size, String plant_water, String plant_sun, String plant_temp, String plant_feature,
 			String plant_mean, String plant_img) {

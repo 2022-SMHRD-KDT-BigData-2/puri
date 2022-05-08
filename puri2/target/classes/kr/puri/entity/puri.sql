@@ -1,9 +1,9 @@
-select * from plant;
+select * from tool;
 
 insert into member values('a','a',',a','a',1);
 commit;
 
-truncate table q_answer;
+truncate table plant;
 
 alter table member modify(age number(10));
 
@@ -39,11 +39,5 @@ from plant , (select a.plant_name1, a.plant_name2, a.plant_name3
 			from (SELECT * FROM (SELECT *FROM QUESTION ORDER BY question_seq DESC) WHERE ROWNUM= 1) q, q_answer a
 			where q.a_1=a.a_1 and q.a_2=a.a_2 and q.a_3=a.a_3 and q.a_4=a.a_4 and q.a_5=a.a_5 and q.a_6=a.a_6 and q.a_7=a.a_7 ) a
 where plant_name IN (a.plant_name1 , a.plant_name2 , a.plant_name3) 
-
-
-
-
-
-
 
 

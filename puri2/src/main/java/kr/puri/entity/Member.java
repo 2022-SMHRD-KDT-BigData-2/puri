@@ -6,6 +6,7 @@ public class Member {
 	String nick;
 	String gender;
 	int age;
+	
 	public Member(){}
 	
 	public Member(String id, String pw, String nick, String gender, int age) {

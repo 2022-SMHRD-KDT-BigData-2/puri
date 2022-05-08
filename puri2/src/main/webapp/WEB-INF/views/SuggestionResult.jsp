@@ -73,11 +73,11 @@
 								<span>${qvo.plant_group }</span>
 								<p>${qvo.plant_mean }</p>
 								<img class="plantsize" src="${qvo.plant_img }">
-								
+
 								<table class="table">
 									<tr>
 										<td class="font_color">난이도</td>
-										
+
 										<td>${qvo.plant_level }</td>
 									</tr>
 									<tr>
@@ -101,25 +101,16 @@
 										<td class="font_color">특징</td>
 										<td>${qvo.plant_feature }</td>
 									</tr>
-									
+
 								</table>
-
-
-
 							</div>
 						</c:forEach>
-
+						<div class="btnb">
+							<a href="<c:url value="/goTool.do"/>">도구 정보 보러가기~!</a>
+						</div>
 					</div>
-					</d
-								iv>
 				</div>
 			</div>
-			<!-- 하단 -->
-			<div id="copyright" class="container">
-				<ul class="menu">
-					<li>&copy; Untitled. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</div>
+		</div>
 	</form>
 </body>

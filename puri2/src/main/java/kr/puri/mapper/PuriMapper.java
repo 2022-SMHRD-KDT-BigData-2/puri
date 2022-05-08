@@ -10,6 +10,7 @@ import kr.puri.entity.Board;
 import kr.puri.entity.Member;
 import kr.puri.entity.Plant;
 import kr.puri.entity.Question;
+import kr.puri.entity.Tool;
 
 @Mapper
 public interface PuriMapper {
@@ -39,4 +40,6 @@ public interface PuriMapper {
 
 	@Delete("delete from write where write_seq=#{seq}")
 	public void boardDelete(int seq);
+
+	public List<Tool> toolList();
 }

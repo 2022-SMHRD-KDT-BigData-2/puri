@@ -88,23 +88,7 @@
 		</div>
 
 
-		<!-- 하단 -->
-		<div id="copyright" class="container">
-			<!--   <ul class="menu">
-         <li class="icon brands fa-twitter"><a href="#"><span
-               class="extra"></span></a></li>
-         <li class="icon brands fa-facebook-f"><a href="#"><span
-               class="extra"></span></a></li>
-         <li class="icon brands fa-youtube"><a href="#"><span
-               class="extra"></span></a></li>
-         <li class="icon brands fa-instagram"><a href="#"><span
-               class="extra"></span></a></li>
-      </ul>-->
-			<ul class="menu">
-				<li>&copy; Untitled. All rights reserved.</li>
-				<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-			</ul>
-		</div>
+		
 	</form>
 </body>
 </html>

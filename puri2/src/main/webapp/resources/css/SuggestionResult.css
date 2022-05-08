@@ -13,6 +13,23 @@
 .font_color {
 	color: #008040;
 }
+
+/*도구 불러오기 버튼*/
+.btnb{
+   margin-top: 3px;
+   text-align: center;
+   
+}
+.btnb a{
+   border: 1px solid #ccc;
+   padding: 10px;
+   border-radius: 3px;
+   
+}
+.btnb a:hover{
+   color: #008040;
+   border-color: rgb(19 170 11/ 50%);
+}
 /*메인*/
 
 /*

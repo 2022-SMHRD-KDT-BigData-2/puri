@@ -1,3 +1,16 @@
+@font-face {
+   font-family: 'SF_HailSnow';!important;
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_HailSnow.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+body{
+	font-family: 'SF_HailSnow';
+}
+
+
 .signup-input{
     display:flex;
     /* margin: 0px 10px 8px 10px; */

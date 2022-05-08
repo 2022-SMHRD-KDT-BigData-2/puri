@@ -43,18 +43,16 @@
                <div class="row">
                   <div class="col-md-12 mb-3">
                      <label for="name">내용:</label>
-                     <textarea rows="10" name="write_content" class="form-control" id="pw" name="write_content" placeholder="" required>
-                     </textarea>
+                     <textarea style="resize: none;" rows="10" name="write_content" class="form-control" id="pw" name="write_content" required></textarea>
                   </div>
                </div>
-               
-               <div class ="">
+            
                <div>
                
                <input type="file" name="file"><br>
                
                </div>
-               </div>
+      
 
                <div class="mb-4"></div>
                <button id="btn" class="btn btn-primary btn-lg btn-block"

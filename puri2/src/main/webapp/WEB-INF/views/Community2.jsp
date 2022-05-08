@@ -1,6 +1,6 @@
 <%@page import="kr.puri.entity.Member"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page session="false"%>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
@@ -41,26 +41,26 @@
 		<nav>
 			<ul class="menu">
 				<%
-						if (vo == null) {
-					%>
-					<!-- <li><a id="popup_layer"
+					if (vo == null) {
+				%>
+				<!-- <li><a id="popup_layer"
                            href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
-					<li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
-					<li style="margin-right: 10em"><a
-						href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
+				<li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
+				<li style="margin-right: 10em"><a
+					href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
 
-					<%
-						} else {
-					%>
-					<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
-					<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
-					<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
-					<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
-					<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
-					</a></li>
-					<%
-						}
-					%>
+				<%
+					} else {
+				%>
+				<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+				<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
+				<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
+				<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
+				<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
+				</a></li>
+				<%
+					}
+				%>
 			</ul>
 		</nav>
 
@@ -74,31 +74,33 @@
 					<!-- 이미지 -->
 					<div class="preview col-md-6">
 
-
-                      
-						
 						<ul class="puricenter">
-							<li><img src="./resources/images/${vo.write_img}" class="smallsize"/></li>
-							
+							<li><img src="./resources/images/${vo.write_img}"
+								class="smallsize" /></li>
+
 						</ul>
-						
+
 					</div>
 
 
 					<div id="coma" class="details col-md-6">
 						<!-- 자기소개 -->
 						<div class="form-group">
-							<h1 class="product-title">${vo.write_title}</h3>
-							
-							<textarea style="width: 95%;" class="form-control" rows="7"
-								id="content" name="content" >${vo.write_content}</textarea>
+							<h3 style="text-align: left;" class="product-title">${vo.write_title}</h3>
 
-							<a href="<c:url value='/boardDelete.do/${vo.write_seq}' />" role="button">삭제</a>
-							
+							<span class="form-control"
+								style="width: 100%; height: auto; font-size: 15pt;"
+								id="sizetext" name="content">${vo.write_content}</span>
+						</div>
+						<div class="action" style="text-align: right;">
+							<button>
+								<a href="<c:url value='/boardDelete.do/${vo.write_seq}' />"
+									role="button">삭제</a>
+							</button>
 						</div>
 
-				
-						
+
+
 					</div>
 				</div>
 			</div>

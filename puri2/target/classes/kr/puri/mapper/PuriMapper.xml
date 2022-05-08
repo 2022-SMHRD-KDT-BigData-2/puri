@@ -55,7 +55,7 @@
 	</insert>
 	
 	<select id="boardList" resultType="kr.puri.entity.Board" parameterType="kr.puri.entity.Board">
-      select * from write
+     select * from write order by write_seq DESC
    </select>
    
 	<select id="toolList" resultType="kr.puri.entity.Tool" parameterType="kr.puri.entity.Tool">

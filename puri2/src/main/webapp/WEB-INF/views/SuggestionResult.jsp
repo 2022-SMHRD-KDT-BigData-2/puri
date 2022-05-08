@@ -68,8 +68,7 @@
 						<!-- 이미지 -->
 						<c:forEach var="qvo" items="${list}">
 							<div class="preview col-md-4">
-								<h2
-									style="padding-bottom: 1em; display: inline; margin-right: 0.5em;">${qvo.plant_name }</h2>
+								<h2 style="padding-bottom: 1em; display: inline; margin-right: 0.5em;">${qvo.plant_name }</h2>
 								<span>${qvo.plant_group }</span>
 								<p>${qvo.plant_mean }</p>
 								<img class="plantsize" src="${qvo.plant_img }">
@@ -104,9 +103,13 @@
 
 								</table>
 							</div>
+
 						</c:forEach>
 						<div class="btnb">
 							<a href="<c:url value="/goTool.do"/>">도구 정보 보러가기~!</a>
+						</div>
+						<div class="btnb">
+							<a href="<c:url value="/goMyplant.do"/>">닫기</a>
 						</div>
 					</div>
 				</div>

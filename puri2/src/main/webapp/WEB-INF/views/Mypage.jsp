@@ -88,14 +88,6 @@
 
 					<div id="coma" class="details col-md-6">
 						<!-- 자기소개 -->
-						<div class="form-group">
-							<h3 class="product-title">Plant Story</h3>
-							<textarea style="width: 95%;" class="form-control" rows="7"
-								id="content" name="content" placeholder="내용 작성"></textarea>
-							<button id="mar" class="save">저장</button>
-							<button class="save">수정</button>
-						</div>
-
 						<h3 class="product-title">Plant list</h3>
 						<ul>
 							<c:forEach var="vo" items="${list}">

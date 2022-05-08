@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.puri.entity.Member;
+import kr.puri.entity.Tool;
 import kr.puri.mapper.PuriMapper;
 
 @Controller
@@ -20,16 +21,13 @@ public class MypageController {
 	   public String goMypage(Member vo) {
 	      return "Mypage";
 	   }
-	  
-	 
-	  
-//	  @RequestMapping("/goMypageList.do")
-//	   public String MypageList(Model model) {
-//	      List<Member> list = puriMapper.MypageList();
-//	      
-//	      // 객체 바인딩 → View
-//	      model.addAttribute("list", list);
-//	      return "Mypage"; // ->/WEB_INF/views/boardList.jsp
-//	   }
+//	  
+//	  @GetMapping("/goMyplant.do.do")
+//	   public String goTool(Model model) {
+//		 List<Tool> list = puriMapper.toolList();
+//	     
+//	     model.addAttribute("list", puriMapper.toolList());
+//	      return "Tool";
+//	   } 
 	   
 }

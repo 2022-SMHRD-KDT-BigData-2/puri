@@ -28,6 +28,7 @@ public class SuggestionResultController {
 	      return "SuggestionResult";
 	   }
 	   
+	   
 
 	  
 	    

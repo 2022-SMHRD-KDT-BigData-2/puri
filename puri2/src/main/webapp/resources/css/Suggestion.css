@@ -1,108 +1,108 @@
 @charset "UTF-8";
 
 div {
-	width: 100%;
-	height: auto;
+   width: 100%;
+   height: auto;
 }
 
 .center {
-	width: 100%;
-	height: 800px;
-	float: right;
-	box-sizing: border-box;
-	text-align: center;
-	border: 1px solid #c2c7cc;
-	float: right;
+   width: 100%;
+   height: 800px;
+   float: right;
+   box-sizing: border-box;
+   text-align: center;
+   border: 1px solid #c2c7cc;
+   float: right;
 }
 
 .gocenter {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	border: 1px solid #c2c7cc;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   border: 1px solid #c2c7cc;
 }
 
 .topmenu {
-	
-	margin-top: 100px;
-	margin-right: 170px;
-	padding-top: 15px; 
-	text-align: center;
-	line-height: 50px;
-	font-size: 30px;
-	
+   
+   margin-top: 100px;
+   margin-right: 100px;
+   padding-top: 15px; 
+   text-align: center;
+   line-height: 50px;
+   font-size: 30px;
+   
 }
 
 section {
-	margin: auto;
-	min-width: 460px;
-	max-width: 750px;
+   margin: auto;
+   min-width: 460px;
+   max-width: 750px;
 }
 
 p {
-	margin-top: 100px;
-	margin-bottom: 100px;
-	text-align: center;
-	font-weight: bold;
-	text-align: center;
-	font-weight: bold;
-	font-size: 30px;
-	
+   margin-top: 1em;
+   margin-bottom: 1em;
+   text-align: center;
+   font-weight: bold;
+   text-align: center;
+   font-weight: bold;
+   font-size: 30px;
+   
 }
 
 #answer1, #answer2 {
-	font-family:"SF_HailSnow";
-	width: 500px;
-	height: 50px;
-	font-size: 20px;
-	border: 1px solid #0c7c14;
-	background-color: white;
-	color: black;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-bottom: 60px;
-	border-radius: 40px;
-	margin-right: 50px;
-	margin-left: 50px;
+   font-family:"SF_HailSnow";
+   width: 500px;
+   height: 50px;
+   font-size: 20px;
+   border: 1px solid #0c7c14;
+   background-color: white;
+   color: black;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   margin-bottom: 60px;
+   border-radius: 40px;
+   margin-right: 50px;
+   margin-left: 50px;
 }
 
 #center {
-	text-align: center;
+   text-align: center;
 }
 
 .cmd {
-	margin-top: 50px;
-	margin-bottom: 200px;
-	
-	
+   margin-top: 50px;
+   margin-bottom: 200px;
+   
+   
 }
 
 
 #q_img>img{
-	height:500px;
-	width: 900px;
-	
+   height:400px;
+   width: 900px;
+   
 }
 
 
 
 /*게이지바*/
 #progress {
-	appearance: none;
+   appearance: none;
 }
 
 #progress::-webkit-progress-bar {
-	background: #e9f2d6;
-	border-radius: 10px;
-	width: 500px;
-	
-	/*box-shadow: inset 3px 3px 10px #ccc;*/
+   background: #e9f2d6;
+   border-radius: 10px;
+   width: 400px;
+   
+   /*box-shadow: inset 3px 3px 10px #ccc;*/
 }
 
 #progress::-webkit-progress-value {
-	border-radius: 10px;
-	background: #0ab639;
-	background: -webkit-linear-gradient(to right, #c3dc8d, #89d47d);
-	background: linear-gradient(to right, #c3dc8d, #89d47d);
+   border-radius: 10px;
+   background: #0ab639;
+   background: -webkit-linear-gradient(to right, #c3dc8d, #89d47d);
+   background: linear-gradient(to right, #c3dc8d, #89d47d);
 }

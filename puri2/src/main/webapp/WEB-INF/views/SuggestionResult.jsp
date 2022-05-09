@@ -1,4 +1,5 @@
 <%@page import="kr.puri.entity.Plant"%>
+<%@page import="kr.puri.entity.Tool"%>
 <%@page import="kr.puri.entity.Member"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
@@ -11,8 +12,7 @@
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 <link href="${cpath}/resources/js/bootstrap.js">
 <link href="${cpath}/resources/js/bootstrap.min.js">
-<link href="${cpath}/resources/css/SuggestionResult.css"
-	rel="stylesheet" />
+<link href="${cpath}/resources/css/SuggestionResult.css" rel="stylesheet" />
 
 <html>
 <meta charset="EUC-KR">
@@ -68,7 +68,8 @@
 						<!-- 이미지 -->
 						<c:forEach var="qvo" items="${list}">
 							<div class="preview col-md-4">
-								<h2 style="padding-bottom: 1em; display: inline; margin-right: 0.5em;">${qvo.plant_name }</h2>
+								<h2
+									style="padding-bottom: 1em; display: inline; margin-right: 0.5em;">${qvo.plant_name }</h2>
 								<span>${qvo.plant_group }</span>
 								<p>${qvo.plant_mean }</p>
 								<img class="plantsize" src="${qvo.plant_img }">
@@ -105,11 +106,40 @@
 							</div>
 
 						</c:forEach>
-						<div class="btnb">
-							<a href="<c:url value="/goTool.do"/>">도구 정보 보러가기~!</a>
+	
+						<div class="btnb" style=" padding-left:0px;">
+							<a href="<c:url value="/goSoil.do"/>">토양 보기</a>
 						</div>
-						<div class="btnb">
-							<a href="<c:url value="/goMyplant.do"/>">닫기</a>
+						<div class="btnb" style=" padding-left:20px;">
+							<a href="<c:url value="/goVase.do"/>">화분 보기</a>
+						</div>
+						<div class="btnb" style=" padding-left:20px;">
+							<a href="<c:url value="/goTool.do"/>">도구 보기</a>
+						</div>
+						<div class="btnb " style=" padding-left:20px; margin-left: 840px;">
+							<a href="<c:url value="/main.do"/>">닫기</a>
+						</div>
+
+					<hr width="100%">
+					
+						<div class="container" style="padding-top:0px;">
+							<div class="card">
+								<div class="container-fliud">
+									<div class="wrapper row" style="padding-top:0px;" >
+										<c:forEach var="tvo" items="${list1}">
+											<div class="preview col-md-4" style="padding-left:100px;">
+												
+												<div id="soil">
+													<img class="toolimg" src="${tvo.tool_img}">
+													<p style="font-size:25px; font-weight: bold;">${tvo.tool_name}</p>
+													<p style="text-align: left">${tvo.tool_info}</p>
+
+												</div>
+											</div>
+										</c:forEach>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

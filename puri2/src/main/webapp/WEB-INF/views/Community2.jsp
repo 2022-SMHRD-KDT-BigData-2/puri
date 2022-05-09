@@ -2,11 +2,17 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page session="false"%>
+   
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%
+   pageContext.setAttribute("br", "<br/>");
+   pageContext.setAttribute("cn", "\n");
+   
+   %>
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -19,6 +25,7 @@
 	rel="stylesheet">
 <html>
 <meta charset="EUC-KR">
+
 
 <head>
 <style type="text/css">
@@ -75,7 +82,7 @@
 					<div class="preview col-md-6">
 
 						<ul class="puricenter">
-							<li><img src="./resources/images/${vo.write_img}"
+							<li><img src="./resources/images/${bvo.write_img}"
 								class="smallsize" /></li>
 
 						</ul>
@@ -86,17 +93,19 @@
 					<div id="coma" class="details col-md-6">
 						<!-- 자기소개 -->
 						<div class="form-group">
-							<h3 style="text-align: left;" class="product-title">${vo.write_title}</h3>
+							<h3 style="text-align: left;" class="product-title">${bvo.write_title}</h3>
 
 							<span class="form-control"
-								style="width: 100%; height: auto; font-size: 15pt;"
-								id="sizetext" name="content">${vo.write_content}</span>
+                        style="width: 100%; height: auto; font-size: 15pt;"
+                        id="sizetext" name="content">${fn:replace(bvo.write_content,cn,br)}</span>
 						</div>
 						<div class="action" style="text-align: right;">
+							<c:if test="${bvo.id ==vo.id}">
 							<button>
-								<a href="<c:url value='/boardDelete.do/${vo.write_seq}' />"
+								<a href="<c:url value='/boardDelete.do/${bvo.write_seq}' />"
 									role="button">삭제</a>
 							</button>
+									</c:if>
 						</div>
 
 

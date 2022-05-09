@@ -26,16 +26,21 @@
    <%
       HttpSession session = request.getSession();
    Member vo = (Member) session.getAttribute("vo");
-   out.print(vo);
+  
    %>
 
    <!--  <div id="page-wrapper">-->
    <!-- Header -->
    <!-- 영상 -->
-   <div class="imges">
+  <div class="wrapper" style="padding:0 0 0 0;">
+      <div class="container">
+        </div></div>
+   <div class="imges" style ="margin-bottom:5em;">
       <div class="col-xs-12">
          <!-- id="header-wrapper" -->
-         <video muted autoplay loop src="./resources/videos/Plant.mp4"></video>
+         <video muted autoplay loop>
+            <source src="./resources/videos/Plant.mp4" type="video/mp4">
+         </video>
       </div>
    </div>
    <!--  <div id="header" class="container"></div>-->
@@ -54,7 +59,7 @@
                <!-- <li><a id="popup_layer"
                            href="<c:url value="/loginout.do"/>">로그인 </a></li> -->
                <li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
-               <li style="margin-right: 10em"><a
+               <li ><a
                   href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
 
                <%
@@ -64,7 +69,7 @@
                <li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
                <li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
                <li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
-               <li style="margin-right: 10em"><a href="${cpath}/logout.do">로그아웃
+               <li ><a href="${cpath}/logout.do">로그아웃
                </a></li>
                <%
                   }
@@ -79,12 +84,14 @@
       <div class="container">
          <div class="row">
             <section class="col-6 col-12-narrower feature">
+            <h2>오늘의 식물</h2>
                <div class="image-wrapper first">
-                  <a href="#" class="image featured first"><img src="./resources/images/Adiantum1.png" style="height: 100%;"></a>
+                  <a href="#" class="image featured first"><img src="./resources/images/Adiantum1.png" style="height: 93%;"></a>
                </div>
                <div style="margin-right: 1em;"></div>
             </section>
             <section class="col-6 col-12-narrower feature">
+               <h2>셀럽들의 식물</h2>
                <div class="wrap_center" style="overflow-y:hidden; ">
                   <div class="container">
                      <div class="img_wrap">
@@ -99,7 +106,7 @@
                   </div>
                </div>
          </section>
-
+   </div>
          </div>
          <script type="text/javascript">
             let banner = {

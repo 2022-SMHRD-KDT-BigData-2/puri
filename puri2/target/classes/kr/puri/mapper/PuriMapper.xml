@@ -27,10 +27,18 @@
 
 	<select id="plantList" parameterType="String"
 		resultType="kr.puri.entity.Plant">
-		select plant_name, plant_group, plant_level, plant_flower, plant_size, plant_water, plant_sun, plant_temp, plant_feature, plant_mean, plant_img
-		from plant , (select a.plant_name1, a.plant_name2, a.plant_name3 from (SELECT * FROM (SELECT *FROM QUESTION where id=#{id} ORDER BY question_seq DESC) WHERE ROWNUM= 1) q, q_answer a
-		where q.a_1=a.a_1 and q.a_2=a.a_2 and q.a_3=a.a_3 and q.a_4=a.a_4 and q.a_5=a.a_5 and q.a_6=a.a_6 and q.a_7=a.a_7) a
-		where plant_name = a.plant_name1 or plant_name = a.plant_name2 or plant_name = a.plant_name3
+		select plant_name, plant_group, plant_level, plant_flower,
+		plant_size, plant_water, plant_sun, plant_temp, plant_feature,
+		plant_mean, plant_img
+		from plant , (select a.plant_name1,
+		a.plant_name2, a.plant_name3 from (SELECT * FROM (SELECT *FROM
+		QUESTION where id=#{id} ORDER BY question_seq DESC) WHERE ROWNUM= 1)
+		q, q_answer a
+		where q.a_1=a.a_1 and q.a_2=a.a_2 and q.a_3=a.a_3 and
+		q.a_4=a.a_4 and q.a_5=a.a_5 and q.a_6=a.a_6 and q.a_7=a.a_7) a
+		where
+		plant_name = a.plant_name1 or plant_name = a.plant_name2 or plant_name
+		= a.plant_name3
 	</select>
 
 	<insert id="stord_img" parameterType="String">
@@ -53,12 +61,31 @@
 		insert into write
 		values(write_seq.nextval,#{write_title},#{write_content},#{id},#{write_img})
 	</insert>
-	
+
 	<select id="boardList" resultType="kr.puri.entity.Board" parameterType="kr.puri.entity.Board">
-     select * from write order by write_seq DESC
-   </select>
-   
-	<select id="toolList" resultType="kr.puri.entity.Tool" parameterType="kr.puri.entity.Tool">
-      select * from tool
-   </select>
+		select * from write order by write_seq DESC
+	</select>
+
+	<select id="toolList1" resultType="kr.puri.entity.Tool" parameterType="kr.puri.entity.Tool">
+		select * from tool where tool_group='토양'
+	</select>
+	
+	<select id="toolList2" resultType="kr.puri.entity.Tool" parameterType="kr.puri.entity.Tool">
+		select * from tool where tool_group='화분'
+	</select>
+	
+	<select id="toolList3" resultType="kr.puri.entity.Tool" parameterType="kr.puri.entity.Tool">
+		select * from tool where tool_group='도구'
+	</select>
+	
+	
+	<insert id="myPlantInsert" parameterType="kr.puri.entity.Myplant">
+	    insert into myplant(myplant_seq, id, plant_name1,plant_name2,plant_name3)
+	    values(myplant_seq.nextval,#{id}, #{plant_name1},#{plant_name2},#{plant_name3})	    
+	</insert>	
+	
+	<select id="myplantList" resultType="kr.puri.entity.Myplant" parameterType="kr.puri.entity.Myplant">
+	    select * from myplant
+	</select>
+	
 </mapper>

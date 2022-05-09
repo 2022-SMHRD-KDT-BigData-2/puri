@@ -11,7 +11,8 @@
 <link href="${cpath}/resources/css/Decipher.css" rel="stylesheet" />
 <html>
 <meta charset="EUC-KR">
-
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <head>
 <style type="text/css">
 .image-upload {
@@ -22,8 +23,9 @@
 }
 
 .button {
-   display: flex;
+   /*display: flex;*/
    justify-content: center;
+   
 }
 
 label {
@@ -72,14 +74,15 @@ label {
    /* border: 2px solid;
    border-color: black;  */
    border-radius: 20px;
-   margin-top: 60px;
-   margin-bottom: 30px;
+   /*margin-top: 60px;
+   margin-bottom: 30px;*/
 }
 </style>
 
 <script type="text/javascript">
+   var file;
    function loadFile(input) {
-      var file = input.files[0]; //선택된 파일 가져오기
+      file = input.files[0]; //선택된 파일 가져오기
 
       //미리 만들어 놓은 div에 text(파일 이름) 추가
       var name = document.getElementById('fileName');
@@ -100,8 +103,32 @@ label {
       //이미지를 image-show div에 추가
       var container = document.getElementById('image-show');
       container.appendChild(newImage);
-   };
+   }   
+   
+   function imageUpload(){   
+         var form_data = new FormData();
+         form_data.append("files", file);
+         $.ajax({
+            url: 'http://127.0.0.1:3000/upload', // point to server-side URL
+            dataType: 'json', // what to expect back from server
+            cache: false,
+            contentType: false,
+            processData: false,
+            data: form_data,
+            type: 'post',
+            success: callback,
+            error: function (response) {
+               alert("error");
+            }
+         });
+   }
+   function callback(data){
+       // Flask에서 데이터를 받는부분
+       alert(data); //?
+  }
 </script>
+
+
 <title>Puri</title>
 </head>
 
@@ -109,7 +136,7 @@ label {
    <%
       HttpSession session = request.getSession();
    Member vo = (Member) session.getAttribute("vo");
-   out.print(vo);
+  
    %>
    <!-- 상단메뉴 -->
    <header class="top-bar">
@@ -143,33 +170,46 @@ label {
    </header>
 
    <!-- 이미지 업로드 -->
-   <h1>파일 업로드</h1>
    <div class="container">
-      <div class="button" style="margin-top: 2em;">
-               <label for="chooseFile"> 파일 선택 </label>
-            </div>
+      <h1 style="font-size: 30pt; margin-top:2em; margin-bottom: 20px;">병해충 판독</h1>
+      <hr class="mb-4" style="margin-bottom: 1em; margin-top: 2em;" >
+      <span class="spanst">병해충 판독할 이미지를 업로드해주세요.</span>
+      <!-- 버튼 -->
+      <div onclick="colorchage()" class="button" id="title" style="width: 15%; white-space: nowrap; float: right; color: #008040;">
+         <label style="display: inline-block;" for="chooseFile"> 파일 선택 </label>
+      </div>
+      <script type="text/javascript">
+         const title = document.querySelector("#title");
+         function colorchage() {
+            title.style.color = '#c2c7cc';
+            title.style.border = 'solid 3px #c2c7cc';
+            
+         }
+         title.addEventListener("click", handleClick);
+      </script>
+      <!-- 사진 -->
       <div id="image-show-contain">
          <div class="image-show" id="image-show"></div>
       </div>
       <div class="image-upload" id="image-upload">
          <form action="${path}/upload.do" method="post"
             enctype="multipart/form-data">
-         
+
             <input type="file" id="chooseFile" name="file" accept="image/*"
                onchange="loadFile(this)"><br>
+               <hr class="mb-4" style="margin-bottom: 1em;">
             <div class="fileContainer">
                <div class="fileInput">
                   <p>파일 이름 |</p>
                   <p id="fileName"></p>
                </div>
                <div class="buttonContainer">
-                  <input type="submit" value="업로드" style="font-family: 'SF_HailSnow';">
+                  <input type="submit"  onclick="imageUpload()" value="업로드" 
+                     style="font-family: 'SF_HailSnow'; color: #008040;">
                </div>
             </div>
          </form>
       </div>
-
-
    </div>
 
 

@@ -47,6 +47,6 @@ create table myplant(
   	 plant_name2 varchar2(50) NOT NULL,
    plant_name3 varchar2(50) NOT NULL
 );
-
-
+select * from tool;
+ select * from tool where tool_group in ('도구');
 

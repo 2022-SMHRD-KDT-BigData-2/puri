@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 
 import kr.puri.entity.Board;
 import kr.puri.entity.Member;
+import kr.puri.entity.Myplant;
 import kr.puri.entity.Plant;
 import kr.puri.entity.Question;
 import kr.puri.entity.Tool;
@@ -41,5 +42,13 @@ public interface PuriMapper {
 	@Delete("delete from write where write_seq=#{seq}")
 	public void boardDelete(int seq);
 
-	public List<Tool> toolList();
+	public List<Tool> toolList1();
+
+	public List<Tool> toolList2();
+	
+	public List<Tool> toolList3();
+	
+	public void myPlantInsert(Myplant vo);
+
+	public List<Myplant> myplantList();
 }

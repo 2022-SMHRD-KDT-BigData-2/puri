@@ -7,13 +7,7 @@ public class Myplant {
 	String plant_name2;
 	String plant_name3;
 	
-	public Myplant(int myplant_seq, String id, String plant_name1, String plant_name2, String plant_name3) {
-		this.myplant_seq = myplant_seq;
-		this.id = id;
-		this.plant_name1 = plant_name1;
-		this.plant_name2 = plant_name2;
-		this.plant_name3 = plant_name3;
-	}
+	
 
 	public int getMyplant_seq() {
 		return myplant_seq;

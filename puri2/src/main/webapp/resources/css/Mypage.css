@@ -1771,7 +1771,7 @@ form ::-moz-focus-inner {
 
 table {
 	width: 100%;
-	border-top: solid 2px #6acd5b;
+	border-top: solid 1px #c2c7cc;
 	text-align: center;
 }
 

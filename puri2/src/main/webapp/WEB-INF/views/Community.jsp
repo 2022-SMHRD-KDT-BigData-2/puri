@@ -4,9 +4,9 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
    language="java"%>
 <c:set var="path" value="${pageContext.request.contextPath}" />
-<script src="${path}/resources/js/test.js"></script>
-<link href="${path}/resources/css/font-awesome.min.css" rel="stylesheet">
 <link href="${path}/resources/css/Community.css" rel="stylesheet" />
+<link href="${path}/resources/js/bootstrap.js">
+<link href="${path}/resources/js/bootstrap.min.js">
 
 <html>
 <meta charset="EUC-KR">
@@ -92,15 +92,6 @@
          <a href="#">4</a> <a href="#">다음</a>
       </div>
    </div>
-
-
-   <!-- Scripts -->
-   <script src="assets/js/jquery.min.js"></script>
-   <script src="assets/js/jquery.dropotron.min.js"></script>
-   <script src="assets/js/browser.min.js"></script>
-   <script src="assets/js/breakpoints.min.js"></script>
-   <script src="assets/js/util.js"></script>
-   <script src="assets/js/main.js"></script>
 
 </body>
 </html>

@@ -2,27 +2,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page session="false"%>
-   
+
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%
-   pageContext.setAttribute("br", "<br/>");
-   pageContext.setAttribute("cn", "\n");
-   
-   %>
+<%
+	pageContext.setAttribute("br", "<br/>");
+pageContext.setAttribute("cn", "\n");
+%>
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="${cpath}/resources/js/bootstrap.js">
+<link href="${cpath}/resources/js/bootstrap.min.js">
 <link href="${cpath}/resources/css/Mypage.css" rel="stylesheet" />
-<link href="${cpath}/resources/css/font-awesome.min.css"
-	rel="stylesheet">
 <html>
 <meta charset="EUC-KR">
 
@@ -80,15 +76,11 @@
 				<div class="wrapper row">
 					<!-- 이미지 -->
 					<div class="preview col-md-6">
-
 						<ul class="puricenter">
 							<li><img src="./resources/images/${bvo.write_img}"
 								class="smallsize" /></li>
-
 						</ul>
-
 					</div>
-
 
 					<div id="coma" class="details col-md-6">
 						<!-- 자기소개 -->
@@ -96,25 +88,37 @@
 							<h3 style="text-align: left;" class="product-title">${bvo.write_title}</h3>
 
 							<span class="form-control"
-                        style="width: 100%; height: auto; font-size: 15pt;"
-                        id="sizetext" name="content">${fn:replace(bvo.write_content,cn,br)}</span>
+								style="width: 100%; height: auto; font-size: 15pt;"
+								id="sizetext" name="content">${fn:replace(bvo.write_content,cn,br)}</span>
 						</div>
 						<div class="action" style="text-align: right;">
 							<c:if test="${bvo.id ==vo.id}">
-							<button>
-								<a href="<c:url value='/boardDelete.do/${bvo.write_seq}' />"
-									role="button">삭제</a>
-							</button>
-									</c:if>
+								<button>
+									<a href="<c:url value='/boardDelete.do/${bvo.write_seq}' />"
+										role="button">삭제</a>
+								</button>
+							</c:if>
 						</div>
-
-
-
+					</div>
+					<!-- 댓글 -->
+					<div class="col-md-12">
+					<p style="margin-bottom: 0.3em; font-size: 16pt;">댓글</p>
+						<table>
+							<tr>
+								<th class="nanna" style="border: none;"></th>
+								<td style="margin-right: 0.5em;"><%=vo.getNick()%></td> <!-- 닉네임 -->
+								<td><input type="text" size="75px"
+									style="width: 100%; border: none; margin-right: 1em;"
+									placeholder="댓글을 입력해주세요."></td> <!-- 댓글 -->
+								<td style="text-align: left;"><button>등록</button></td> <!-- 글작성 시 등록 버튼 활성화 -->
+								<td style="text-align: left;"><button>수정</button></td> <!-- 글작성 완료 시 수정 삭제 버튼 활성화 -->
+								<td style="text-align: left;"><button>삭제</button></td>
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 </body>
 
 </html>

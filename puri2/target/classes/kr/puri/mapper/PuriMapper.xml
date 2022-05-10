@@ -84,8 +84,8 @@
 	    values(myplant_seq.nextval,#{id}, #{plant_name1},#{plant_name2},#{plant_name3})	    
 	</insert>	
 	
-	<select id="myplantList" resultType="kr.puri.entity.Myplant" parameterType="kr.puri.entity.Myplant">
-	    select * from myplant
+	<select id="myplantList" parameterType="kr.puri.entity.Member" resultType="kr.puri.entity.Myplant" >
+	    select * from myplant where id=#{id}
 	</select>
 	
 </mapper>

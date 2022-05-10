@@ -2,6 +2,8 @@ package kr.puri.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,16 +22,16 @@ public class MypageController {
 	private PuriMapper puriMapper;
 
 	@GetMapping("/goMypage.do")
-	public String goMypage(Member vo) {
-		return "Mypage";
-	}
-
-	@GetMapping("/goMyplantList.do")
-	public String goMyplantList(Model model) {
-		List<Myplant> list = puriMapper.myplantList();
+	public String goMypage(Model model, HttpSession session) {
+		Member member=(Member)session.getAttribute("vo");
+		
+		List<Myplant> list = puriMapper.myplantList(member.getId());
 		model.addAttribute("list",list);
 		return "Mypage";
 	}
+
+
+
 
 }
 

@@ -170,6 +170,7 @@ table {
    border-spacing: 0;*/
 	border-spacing: 2em;
 	border-collapse: separate;
+	text-align: center;
 }
 
 .title {
@@ -1753,16 +1754,22 @@ form ::-moz-focus-inner {
 }
 
 /* Table */
+.table>tbody>tr>td {
+	border-top: none;
+}
+
+.table {
+	margin-bottom: 0px;
+}
+
 table {
 	width: 100%;
+	border-top: solid 2px #6acd5b;
+	text-align: center;
 }
 
 table.default {
 	width: 100%;
-}
-
-table.default tbody tr {
-	border-top: solid 1px #D2D7DC;
 }
 
 table.default tbody tr:nth-child(2n+1) {
@@ -1771,10 +1778,11 @@ table.default tbody tr:nth-child(2n+1) {
 
 table.default td {
 	padding: 0.5em 1em 0.5em 1em;
+	text-align: center;
 }
 
 table.default th {
-	text-align: left;
+	text-align: center;
 	font-weight: 400;
 	padding: 0.5em 1em 0.5em 1em;
 }
@@ -2965,9 +2973,13 @@ img {
 
 
 
+
+
 %
 {
 opacity
+
+
 
 
 
@@ -2993,7 +3005,11 @@ opacity
 
 
 
+
+
 1
+
+
 
 
 
@@ -3018,7 +3034,11 @@ opacity
 
 
 
+
+
 :
+
+
 
 
 
@@ -3042,7 +3062,11 @@ scale
 
 
 
+
+
 (
+
+
 
 
 
@@ -3068,7 +3092,11 @@ scale
 
 
 
+
+
 )
+
+
 
 
 
@@ -3093,7 +3121,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -3117,7 +3149,11 @@ scale
 
 
 
+
+
 (
+
+
 
 
 
@@ -3143,7 +3179,11 @@ scale
 
 
 
+
+
 )
+
+
 
 
 
@@ -3176,9 +3216,13 @@ keyframes opacity { 0% {
 
 
 
+
+
 %
 {
 opacity
+
+
 
 
 
@@ -3204,7 +3248,11 @@ opacity
 
 
 
+
+
 1
+
+
 
 
 
@@ -3229,7 +3277,11 @@ opacity
 
 
 
+
+
 :
+
+
 
 
 
@@ -3253,7 +3305,11 @@ scale
 
 
 
+
+
 (
+
+
 
 
 
@@ -3279,7 +3335,11 @@ scale
 
 
 
+
+
 )
+
+
 
 
 
@@ -3304,7 +3364,11 @@ transform
 
 
 
+
+
 :
+
+
 
 
 
@@ -3328,7 +3392,11 @@ scale
 
 
 
+
+
 (
+
+
 
 
 
@@ -3354,7 +3422,11 @@ scale
 
 
 
+
+
 )
+
+
 
 
 

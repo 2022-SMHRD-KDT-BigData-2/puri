@@ -50,5 +50,11 @@ public interface PuriMapper {
 	
 	public void myPlantInsert(Myplant vo);
 
-	public List<Myplant> myplantList();
+	
+
+	//public List<Myplant> myplantList();
+
+	//public List<Myplant> myplantList(Member vo);
+
+	public List<Myplant> myplantList(String id);
 }

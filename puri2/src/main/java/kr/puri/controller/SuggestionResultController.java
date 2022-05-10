@@ -44,7 +44,7 @@ public class SuggestionResultController {
 		public String goSoil(Model model) {
 			List<Tool> list1 = puriMapper.toolList1();
 
-			model.addAttribute("list1", puriMapper.toolList1());
+			model.addAttribute("list1",list1);
 			return "SuggestionResult";
 		}
 
@@ -52,7 +52,7 @@ public class SuggestionResultController {
 		public String goVase(Model model) {
 			List<Tool> list1 = puriMapper.toolList2();
 
-			model.addAttribute("list1", puriMapper.toolList2());
+			model.addAttribute("list1", list1);
 			return "SuggestionResult";
 		}
 
@@ -60,7 +60,7 @@ public class SuggestionResultController {
 		public String goTool(Model model) {
 			List<Tool> list1 = puriMapper.toolList3();
 
-			model.addAttribute("list1", puriMapper.toolList3());
+			model.addAttribute("list1",list1);
 			return "SuggestionResult";
 		}
 	  

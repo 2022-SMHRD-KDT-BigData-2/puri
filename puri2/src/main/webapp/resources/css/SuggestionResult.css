@@ -1831,9 +1831,9 @@ input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hove
 /* Wrappers */
 .wrapper {
    position: relative;
-   background: #fff;
+   
    overflow-x: hidden;
-   padding: 6em 0 6em 0;
+   padding: 2em 0 6em 0;
 }
 
 .image-wrapper {
@@ -2188,7 +2188,7 @@ input[type="button"]:hover, input[type="submit"]:hover, input[type="reset"]:hove
 
    /* Wrappers */
    .wrapper {
-      padding: 5em 0 5em 0;
+      padding: 2em 0 5em 0;
    }
    #header-wrapper {
       padding: 2em 0 2em 0;

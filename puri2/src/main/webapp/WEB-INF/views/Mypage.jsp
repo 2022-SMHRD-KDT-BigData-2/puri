@@ -90,11 +90,12 @@
 
 						<c:forEach var="pvo" items="${list}">
 						<div class="preview col-md-12">
-							<table class="table">
+							<table class="table" style="table-layout:fixed; border: none;">
 								<tr>
-								<td>${pvo.plant_name1 }</td>
-								<td>${pvo.plant_name2 }</td>
-								<td>${pvo.plant_name3 }</td>
+								<th class="nanna" style="border: none;"></th>
+								<td>${pvo.plant_name1}</td>
+								<td>${pvo.plant_name2}</td>
+								<td>${pvo.plant_name3}</td>
 								</tr>
 
 							</table>

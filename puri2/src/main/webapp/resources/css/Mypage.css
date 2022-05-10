@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.nanna{
+	width: 10px;
+	background-color: #548235;
+	/*background-color: #8AD67F;*/
+	/*background-color: #008040;*/
+}
 /*명찰*/
 .Nick {
 	display: inline;
@@ -168,7 +174,7 @@ blockquote:before, blockquote:after, q:before, q:after {
 table {
 	/*border-collapse: collapse;
    border-spacing: 0;*/
-	border-spacing: 2em;
+	border-spacing: 1em;
 	border-collapse: separate;
 	text-align: center;
 }
@@ -274,7 +280,8 @@ a {
 
 a:hover {
 	color: #008040;
-	border-bottom-color: rgba(255, 255, 255, 0);
+	/*border-bottom-color: rgba(255, 255, 255, 0);*/
+	border: none;
 }
 
 strong, b {

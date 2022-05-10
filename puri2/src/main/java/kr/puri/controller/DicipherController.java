@@ -22,13 +22,13 @@ import kr.puri.mapper.PuriMapper;
 @Controller
 public class DicipherController {
 
-	@Autowired
-	private PuriMapper puriMapper;
+   @Autowired
+   private PuriMapper puriMapper;
 
-	@GetMapping("/goDecipher.do")
-	public String goDecipher() {
-		return "Decipher";
-	}
+   @GetMapping("/goDecipher.do")
+   public String goDecipher() {
+      return "Decipher";
+   }
 
-	
+   
 }

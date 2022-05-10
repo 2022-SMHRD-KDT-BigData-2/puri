@@ -64,6 +64,8 @@
 		<div class="container" id="vooo">
 			<div class="card">
 				<div class="container-fliud">
+					<p style=" margin-top: 4em; text-align: left; font-size: 20pt; margin-bottom: 0;" ><%=vo.getNick() %>님의 추천 결과</p>
+					<hr width="100%">
 					<div class="wrapper row">
 						<!-- 이미지 -->
 						<c:forEach var="qvo" items="${list}">
@@ -84,7 +86,6 @@
 										<td class="font_color">꽃 유무</td>
 										<td>${qvo.plant_flower }</td>
 									</tr>
-
 									<tr>
 										<td class="font_color">사이즈</td>
 										<td>${qvo.plant_size }</td>

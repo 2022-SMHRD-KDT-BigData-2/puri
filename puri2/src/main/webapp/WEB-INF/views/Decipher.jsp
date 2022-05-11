@@ -166,34 +166,49 @@ label {
 		</div>
 	</header>
 
-	<!-- 이미지 업로드 -->
-	<h1>파일 업로드</h1>
-	<div class="container">
-		<div class="button" style="margin-top: 2em;">
-			<label for="chooseFile"> 파일 선택 </label>
-		</div>
-		<div id="image-show-contain">
-			<div class="image-show" id="image-show"></div>
-		</div>
-		<div class="image-upload" id="image-upload">
+   <!-- 이미지 업로드 -->
+   <div class="container">
+      <h1 style="font-size: 30pt; margin-top:2em; margin-bottom: 20px;">병해충 판독</h1>
+      <hr class="mb-4" style="margin-bottom: 1em; margin-top: 2em;" >
+      <span class="spanst">병해충 판독할 이미지를 업로드해주세요.</span>
+      <!-- 버튼 -->
+      <div onclick="colorchage()" class="button" id="title" style="width: 15%; white-space: nowrap; float: right; color: #008040;">
+         <label style="display: inline-block;" for="chooseFile"> 파일 선택 </label>
+      </div>
+      <script type="text/javascript">
+         const title = document.querySelector("#title");
+         function colorchage() {
+            title.style.color = '#c2c7cc';
+            title.style.border = 'solid 3px #c2c7cc';
+            
+         }
+         title.addEventListener("click", handleClick);
+      </script>
+      <!-- 사진 -->
+      <div id="image-show-contain">
+         <div class="image-show" id="image-show"></div>
+      </div>
+      <div class="image-upload" id="image-upload">
+         <form action="${path}/upload.do" method="post"
+            enctype="multipart/form-data">
 
-			<input type="file" id="chooseFile" name="file" accept="image/*"
-				onchange="loadFile(this)"><br>
-			<div class="fileContainer">
-				<div class="fileInput">
-					<p>파일 이름 |</p>
-					<p id="fileName"></p>
-				</div>
-				<div class="buttonContainer">
-					<input type="button" onclick="imageUpload()" value="업로드"
-						style="font-family: 'SF_HailSnow';">
-				</div>
-			</div>
+            <input type="file" id="chooseFile" name="file" accept="image/*"
+               onchange="loadFile(this)"><br>
+               <hr class="mb-4" style="margin-bottom: 1em;">
+            <div class="fileContainer">
+               <div class="fileInput">
+                  <p>파일 이름 |</p>
+                  <p id="fileName"></p>
+               </div>
+               <div class="buttonContainer">
+                  <input type="submit"  onclick="imageUpload()" value="업로드" 
+                     style="font-family: 'SF_HailSnow'; color: #008040;">
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
 
-		</div>
-
-
-	</div>
 
 
 </body>

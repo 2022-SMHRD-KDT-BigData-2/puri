@@ -1,4 +1,4 @@
-<%@page import="kr.puri.entity.Member"%>
+ <%@page import="kr.puri.entity.Member"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <link

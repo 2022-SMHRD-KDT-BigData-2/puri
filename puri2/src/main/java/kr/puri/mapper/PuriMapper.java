@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Select;
 
 import kr.puri.entity.Answer;
 import kr.puri.entity.Board;
+import kr.puri.entity.Disease_Info;
 import kr.puri.entity.Member;
 import kr.puri.entity.Myplant;
 import kr.puri.entity.Plant;
@@ -63,4 +64,6 @@ public interface PuriMapper {
 	public void answerDelete(int answer_seq);
 	
 	public List<Answer> answerList(int write_seq);
+	
+	public Disease_Info dicipherResult(String rs);
 }

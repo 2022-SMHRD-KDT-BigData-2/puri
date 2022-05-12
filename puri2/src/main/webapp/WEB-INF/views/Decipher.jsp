@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page session="false"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"
-	language="java"%>
+   language="java"%>
 <c:set var="cpath" value="${pageContext.request.contextPath}" />
 
 
@@ -13,164 +13,164 @@
 <meta charset="EUC-KR">
 <head>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style type="text/css">
 .image-upload {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	/* justify-content: center; */
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   /* justify-content: center; */
 }
 
 .button {
-	display: flex;
-	justify-content: center;
+   display: flex;
+   justify-content: center;
 }
 
 label {
-	cursor: pointer;
-	font-size: 1em;
+   cursor: pointer;
+   font-size: 1em;
 }
 
 #chooseFile {
-	visibility: hidden;
+   visibility: hidden;
 }
 
 .fileContainer {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .fileInput {
-	display: flex;
-	align-items: center;
-	width: 90%;
-	height: 30px;
+   display: flex;
+   align-items: center;
+   width: 90%;
+   height: 30px;
 }
 
 #fileName {
-	margin-left: 5px;
+   margin-left: 5px;
 }
 
 .image-show {
-	z-index: -1;
-	/* display: flex; */
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	width: 100%;
-	height: 100%;
+   z-index: -1;
+   /* display: flex; */
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   width: 100%;
+   height: 100%;
 }
 
 .img {
-	position: absolute;
+   position: absolute;
 }
 
 #image-show-contain {
-	width: 100%;
-	height: 70%;
-	/* border: 2px solid;
+   width: 100%;
+   height: 70%;
+   /* border: 2px solid;
    border-color: black;  */
-	border-radius: 20px;
-	margin-top: 60px;
-	margin-bottom: 30px;
+   border-radius: 20px;
+   margin-top: 60px;
+   margin-bottom: 30px;
 }
 </style>
 
 <script type="text/javascript">
-	var file;
-	function loadFile(input) {
-		file = input.files[0]; //선택된 파일 가져오기
+   var file;
+   function loadFile(input) {
+      file = input.files[0]; //선택된 파일 가져오기
 
-		//미리 만들어 놓은 div에 text(파일 이름) 추가
-		var name = document.getElementById('fileName');
-		name.textContent = file.name;
+      //미리 만들어 놓은 div에 text(파일 이름) 추가
+      var name = document.getElementById('fileName');
+      name.textContent = file.name;
 
-		//새로운 이미지 div 추가
-		var newImage = document.createElement("img");
-		newImage.setAttribute("class", 'img');
+      //새로운 이미지 div 추가
+      var newImage = document.createElement("img");
+      newImage.setAttribute("class", 'img');
 
-		//이미지 source 가져오기
-		newImage.src = URL.createObjectURL(file);
+      //이미지 source 가져오기
+      newImage.src = URL.createObjectURL(file);
 
-		newImage.style.width = "70%";
-		newImage.style.height = "70%";
-		// newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지를 숨긴다
-		newImage.style.objectFit = "contain";
+      newImage.style.width = "70%";
+      newImage.style.height = "70%";
+      // newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지를 숨긴다
+      newImage.style.objectFit = "contain";
 
-		//이미지를 image-show div에 추가
-		var container = document.getElementById('image-show');
-		container.appendChild(newImage);
-	}
+      //이미지를 image-show div에 추가
+      var container = document.getElementById('image-show');
+      container.appendChild(newImage);
+   }
 
-	function imageUpload() {
-		var form_data = new FormData();
-		form_data.append("files", file);
-		$.ajax({
-			url : 'http://210.223.207.51:9900/upload', // point to server-side URL
-			// dataType: 'json', // what to expect back from server
-			cache : false,
-			contentType : false,
-			processData : false,
-			data : form_data,
-			type : 'post',
-			success : callback,
-			error : function(response) {
-				alert("error");
-			}
-		});
-	}
-	function callback(rs) {
-		
-		return rs;
-	}
+   function imageUpload() {
+      var form_data = new FormData();
+      form_data.append("files", file);
+      $.ajax({
+         url : 'http://210.223.207.51:9900/upload', 
+         cache : false,
+         contentType : false,
+         processData : false,
+         data : form_data,
+         type : 'post',
+         success : callback,
+         error : function(response) {
+            alert("error");
+         }
+      });
+   }
+   function callback(rs) {      
+      location.href = "dicipherResult.do?rs=" + rs;
+      
+   }
 </script>
 <title>Puri</title>
 </head>
 
 <body class="homepage is-preload">
-	<%
-		HttpSession session = request.getSession();
-	Member vo = (Member) session.getAttribute("vo");
-	out.print(vo);
-	%>
-	<!-- 상단메뉴 -->
-	<header class="top-bar">
-		<div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
-			<h1 class="log">
-				<a href="<c:url value="/main.do"/>"><img
-					src="./resources/images/logo555.png" alt="" /></a>
-			</h1>
-			<nav>
-				<ul class="menu">
-					<%
-						if (vo == null) {
-					%>
-					<li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
-					<li style="margin-right: 10em"><a
-						href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
-					<%
-						} else {
-					%>
-					<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
-					<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
-					<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
-					<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
-					<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃</a></li>
-					<%
-						}
-					%>
-				</ul>
-			</nav>
-		</div>
-	</header>
+   <%
+      HttpSession session = request.getSession();
+   Member vo = (Member) session.getAttribute("vo");
+   out.print(vo);
+   %>
+   <!-- 상단메뉴 -->
+   <header class="top-bar">
+      <div class="col-lg-4 col-md-4 coml-sm-2 col-xs-2">
+         <h1 class="log">
+            <a href="<c:url value="/main.do"/>"><img
+               src="./resources/images/logo555.png" alt="" /></a>
+         </h1>
+         <nav>
+            <ul class="menu">
+               <%
+                  if (vo == null) {
+               %>
+               <li><a href="<c:url value="/goLogin.do"/>">로그인 </a></li>
+               <li style="margin-right: 10em"><a
+                  href="<c:url value="/goSignUp.do"/>">회원가입</a></li>
+               <%
+                  } else {
+               %>
+               <li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+               <li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
+               <li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
+               <li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
+               <li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃</a></li>
+               <%
+                  }
+               %>
+            </ul>
+         </nav>
+      </div>
+   </header>
 
    <!-- 이미지 업로드 -->
    <div class="container">
       <h1 style="font-size: 30pt; margin-top:2em; margin-bottom: 20px;">병해충 판독</h1>
       <hr class="mb-4" style="margin-bottom: 1em; margin-top: 2em;" >
-      <span class="spanst">병해충 판독할 이미지를 업로드해주세요.</span>
+      <span class="spanst">병해충 판독할 이미지 파일(.png)을 업로드 해주세요.</span>
+      
       <!-- 버튼 -->
       <div onclick="colorchage()" class="button" id="title" style="width: 15%; white-space: nowrap; float: right; color: #008040;">
          <label style="display: inline-block;" for="chooseFile"> 파일 선택 </label>
@@ -201,8 +201,9 @@ label {
                   <p id="fileName"></p>
                </div>
                <div class="buttonContainer">
-                  <input type="submit"  onclick="imageUpload()" value="업로드" 
-                     style="font-family: 'SF_HailSnow'; color: #008040;">
+                  <input type="button" value="업로드" onclick="imageUpload();" style="font-family: 'SF_HailSnow'; color: #008040;">
+<!--                   <input type="button"  onclick="imageUpload();loaction.href='/goDecipherResult.do'" value="업로드" 
+                     style="font-family: 'SF_HailSnow'; color: #008040;"> -->
                </div>
             </div>
          </form>

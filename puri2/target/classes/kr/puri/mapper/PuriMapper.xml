@@ -97,5 +97,8 @@
        select * from  answer where write_seq=#{write_seq} order by answer_seq DESC
    </select>
    
+	<select id="dicipherResult" parameterType="String" resultType="kr.puri.entity.Disease_Info">
+       select * from disease_info where rs=#{rs}
+   </select>
 	
 </mapper>

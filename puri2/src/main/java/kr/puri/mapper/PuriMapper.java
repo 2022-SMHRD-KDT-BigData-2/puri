@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import kr.puri.entity.Answer;
 import kr.puri.entity.Board;
 import kr.puri.entity.Member;
 import kr.puri.entity.Myplant;
@@ -45,16 +46,21 @@ public interface PuriMapper {
 	public List<Tool> toolList1();
 
 	public List<Tool> toolList2();
-	
+
 	public List<Tool> toolList3();
-	
+
 	public void myPlantInsert(Myplant vo);
 
-	
+	// public List<Myplant> myplantList();
 
-	//public List<Myplant> myplantList();
-
-	//public List<Myplant> myplantList(Member vo);
+	// public List<Myplant> myplantList(Member vo);
 
 	public List<Myplant> myplantList(String id);
+
+	public void answerInsert(Answer avo);
+
+	@Delete("delete from answer where answer_seq=#{answer_seq}")
+	public void answerDelete(int answer_seq);
+	
+	public List<Answer> answerList(int write_seq);
 }

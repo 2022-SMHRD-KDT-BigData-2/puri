@@ -17,8 +17,26 @@
 
 <head>
 <style type="text/css">
+/*게이지바*/
+progress {
+	appearance: none;
+}
+
+progress::-webkit-progress-bar {
+	background: #e9f2d6;
+	border-radius: 10px;
+	/*box-shadow: inset 3px 3px 10px #ccc;*/
+}
+
+progress::-webkit-progress-value {
+	border-radius: 10px;
+	background: #0ab639;
+	background: -webkit-linear-gradient(to right, #c3dc8d, #89d47d);
+	background: linear-gradient(to right, #c3dc8d, #89d47d);
+}
 </style>
 <title>Puri-Mypage</title>
+
 </head>
 
 <body>
@@ -65,23 +83,30 @@
 				<div class="wrapper row">
 					<!-- 이미지 -->
 					<div class="preview col-md-6">
-
-
-						<h4 class="Nick"><%=vo.getNick()%></h4>
-
-
+						<h4 class="Nick" style="margin-bottom: 1.5em;"><%=vo.getNick()%></h4>
 						<ul class="puricenter">
-							<li><img src="./resources/images/re1.png" class="smallsize"></li>
-							<li>출석 &nbsp <progress id="progress" value="20" min="0"
+							<li><img src="./resources/puri/re1.png" class="smallsize"
+								id="img3"></li>
+							<li style="margin-top: 1.5em;">출석 &nbsp <progress id="jb2" value="100" min="0"
 									max="100"></progress></li>
-							<li>댓글 &nbsp <progress id="progress" value="50" min="0"
-									max="100"></progress></li>
+							<li>댓글 &nbsp <progress id="jb" value="100" min="0" max="100"></progress></li>
 						</ul>
 						<div class="action" style="text-align: center;">
-							<button>도감</button>
-							<button>진화</button>
+							<button id="btn2" onclick="jbFunc()" style="width: 30%;">진화</button>
 						</div>
 					</div>
+					<script type="text/javascript">
+						function jbFunc() {
+							if (document.getElementById('jb2').value != '100') {
+								btn2.style.display = 'block';
+							} else {
+								document.getElementById('jb2').value = '0';
+								document.getElementById('jb').value = '0';
+								document.getElementById("img3").src = "./resources/puri/re2.png";
+								btn2.style.display = 'none';
+							}
+						}
+					</script>
 
 
 					<div id="coma" class="details col-md-6">
@@ -89,16 +114,16 @@
 						<h3 class="product-title">Plant list</h3>
 
 						<c:forEach var="pvo" items="${list}">
-						<div class="preview col-md-12">
-							<table class="table" style="table-layout:fixed; border: none;">
-								<tr>
-								<th class="nanna" style="border: none;"></th>
-								<td>${pvo.plant_name1}</td>
-								<td>${pvo.plant_name2}</td>
-								<td>${pvo.plant_name3}</td>
-								</tr>
+							<div class="preview col-md-12">
+								<table class="table" style="table-layout: fixed; border: none;">
+									<tr>
+										<th class="nanna" style="border: none;"></th>
+										<td>${pvo.plant_name1}</td>
+										<td>${pvo.plant_name2}</td>
+										<td>${pvo.plant_name3}</td>
+									</tr>
 
-							</table>
+								</table>
 							</div>
 						</c:forEach>
 

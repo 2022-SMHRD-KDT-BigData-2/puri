@@ -1,5 +1,7 @@
 package kr.puri.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import kr.puri.entity.Answer;
 import kr.puri.entity.Board;
 import kr.puri.entity.Member;
 import kr.puri.mapper.PuriMapper;
@@ -21,14 +24,19 @@ public class Community2Controller {
     
     @GetMapping("/Community2.do")
     public String goMypage(int seq, Model model,HttpServletRequest request) {
+       
        Board bvo=puriMapper.boardContent(seq);
        model.addAttribute("bvo", bvo);
+
        
        HttpSession session =request.getSession();
        Member vo = (Member)session.getAttribute("vo");
        model.addAttribute("vo", vo);
        
-   
+       List<Answer> list = puriMapper.answerList(seq);
+       model.addAttribute("list", list);
+       
+       
        return "Community2"; // ${seq}
     }
     

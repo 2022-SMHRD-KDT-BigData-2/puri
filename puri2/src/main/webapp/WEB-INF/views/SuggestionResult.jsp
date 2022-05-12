@@ -28,7 +28,7 @@
 		HttpSession session = request.getSession();
 	Member vo = (Member) session.getAttribute("vo");
 	%>
-	<form action="${path}/goSuggestionResult.do" method="post">
+	<form action="${cpath}/goSuggestionResult.do" method="post">
 		<header class="top-bar">
 
 			<h1 class="log">
@@ -51,7 +51,7 @@
 					<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
 					<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
 					<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
-					<li style="margin-right: 10em"><a href="${path}/logout.do">로그아웃
+					<li style="margin-right: 10em"><a href="${cpath}/logout.do">로그아웃
 					</a></li>
 					<%
 						}

@@ -88,4 +88,14 @@
 	    select * from myplant where id=#{id}
 	</select>
 	
+	<insert id="answerInsert" parameterType="kr.puri.entity.Answer">
+      insert into answer(answer_seq,write_seq,answer_content,id)
+      values(answer_seq.nextval, #{write_seq}, #{answer_content}, #{id})
+   </insert>
+   
+	<select id="answerList" parameterType="int" resultType="kr.puri.entity.Answer" >
+       select * from  answer where write_seq=#{write_seq} order by answer_seq DESC
+   </select>
+   
+	
 </mapper>

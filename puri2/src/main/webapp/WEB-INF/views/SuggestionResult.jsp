@@ -47,7 +47,7 @@
 					<%
 						} else {
 					%>
-					<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+					<li><a href="<c:url value="/goSuggestion.do"/>">반려식물 매칭 </a></li>
 					<li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
 					<li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
 					<li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
@@ -64,7 +64,7 @@
 		<div class="container" id="vooo">
 			<div class="card">
 				<div class="container-fliud">
-					<p style=" margin-top: 4em; text-align: left; font-size: 20pt; margin-bottom: 0;" ><%=vo.getNick() %>님의 추천 결과</p>
+					<p style=" margin-top: 4em; text-align: left; font-size: 20pt; margin-bottom: 0;" ><%=vo.getNick() %>님의 매칭 결과</p>
 					<hr width="100%">
 					<div class="wrapper row">
 						<!-- 이미지 -->

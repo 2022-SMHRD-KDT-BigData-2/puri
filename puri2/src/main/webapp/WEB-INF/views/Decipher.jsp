@@ -152,7 +152,7 @@ label {
                <%
                   } else {
                %>
-               <li><a href="<c:url value="/goSuggestion.do"/>">반려식물 추천 </a></li>
+               <li><a href="<c:url value="/goSuggestion.do"/>">반려식물 매칭 </a></li>
                <li><a href="<c:url value="/goDecipher.do"/>">병해충 판독</a></li>
                <li><a href="<c:url value="/goCommunity.do"/>">커뮤니티</a></li>
                <li><a href="<c:url value="/goMypage.do"/>">마이페이지</a></li>
